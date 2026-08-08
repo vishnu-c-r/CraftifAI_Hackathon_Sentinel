@@ -107,12 +107,12 @@ Humidity is not available from the BMP180. Add a separate humidity sensor in a f
 ```text
         ┌──────────────┐      I²C @400kHz      ┌───────────────────────┐
         │  HW-290 /    │  SDA=GPIO4 SCL=GPIO5  │      ESP32-C3         │
-        │  GY-91 board │ ───────────────────►  │   DevKitM-1          │
+        │  GY-91 board │ ───────────────────►  │   DevKitM-1           │
         │  MPU-6050    │                       │                       │
         │  BMP180      │                       │  sensor_200hz task    │
         └──────────────┘                       │  operating_state      │
                                                │  baseline_learner     │
-                                               │  anomaly_detector      │
+                                               │  anomaly_detector     │
                                                │  telemetry ring       │
         ┌──────────────┐   GPIO8 (WS2812)      │  dashboard (SoftAP)   │
         │ Onboard LED  │ ◄───────────────────  │                       │
