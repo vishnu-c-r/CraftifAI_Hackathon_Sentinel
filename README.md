@@ -22,11 +22,6 @@ Target board: **ESP32-C3-DevKitM-1**
 | HW-290 SDA | **4** | I²C data; module has onboard pull-ups |
 | HW-290 SCL | **5** | I²C clock; module has onboard pull-ups |
 | Onboard WS2812 data | **8** | Addressable RGB LED; reserved |
-| BOOT button | **9** | Board button, active-low; not used by current Sentinel sensor firmware |
-| USB-JTAG D− | **18** | USB interface; do not assign peripherals |
-| USB-JTAG D+ | **19** | USB interface; do not assign peripherals |
-| UART RX | **20** | Serial console input |
-| UART TX | **21** | Serial console output |
 | Restricted GPIOs | **11–17** | Connected to integrated flash; do not use |
 
 ### HW-290 wiring
