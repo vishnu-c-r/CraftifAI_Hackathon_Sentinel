@@ -1,0 +1,29 @@
+menu "Firmgen Telemetry"
+
+    config FG_TELEMETRY_TEMP_SENSOR
+        bool "Sample on-chip temperature sensor"
+        default n
+        depends on SOC_TEMP_SENSOR_SUPPORTED
+        help
+            Reads the internal temperature sensor each interval and includes
+            a "health":{"temp_c":...} field in the JSON output (shown as
+            "CPU Temp" in the RTOS panel).
+
+            OFF by default: enabling it makes the component require the
+            esp_driver_tsens driver, which would otherwise be pulled into
+            projects that don't use it. Turn this on only when you want the
+            CPU temperature reading. Also disable it if your application
+            already installs the temperature sensor driver — ESP-IDF allows
+            only one owner of that driver at a time.
+
+    config FG_PROTO_MONITOR
+        bool "Enable protocol bus monitor"
+        default y
+        help
+            Enables the firmgen_proto_monitor component. Call
+            firmgen_proto_monitor_start() from app_main and use
+            fg_proto_i2c() / fg_proto_spi() / fg_proto_uart() /
+            fg_proto_wifi_rssi() / fg_proto_mqtt_pub() from your driver
+            callbacks to log protocol activity to the Live Intelligence Panel.
+
+endmenu

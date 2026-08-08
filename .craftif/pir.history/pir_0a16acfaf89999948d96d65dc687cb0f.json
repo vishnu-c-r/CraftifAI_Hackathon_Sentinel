@@ -1,0 +1,3082 @@
+{
+  "schema_version": "2.0.0",
+  "id": "pir_craftiai_sentinel",
+  "revision": "0a16acfaf89999948d96d65dc687cb0f",
+  "provenance": {
+    "project_path": "C:\\Users\\vishn\\Documents\\projects\\Hackathon\\my_firmware\\craftiai_sentinel",
+    "chat_id": "73dfed43-53d2-441a-8c80-9519dcdff4a9",
+    "revision": "0a16acfaf89999948d96d65dc687cb0f",
+    "generated_at_ms": 1786184702254,
+    "analyzer_version": "pir_maker-static-0.2.0",
+    "analyzed_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/interfaces/vibration_source.h",
+      "firmware/platforms/esp32/led_platform.c",
+      "firmware/platforms/esp32/led_platform.h",
+      "firmware/platforms/esp32/sensor_platform.c",
+      "firmware/platforms/esp32/sensor_platform.h",
+      "firmware/services/anomaly_detector.c",
+      "firmware/services/anomaly_detector.h",
+      "firmware/services/baseline_learner.c",
+      "firmware/services/baseline_learner.h",
+      "firmware/services/commissioning.c",
+      "firmware/services/commissioning.h",
+      "firmware/services/dashboard.c",
+      "firmware/services/dashboard.h",
+      "firmware/services/operating_state.c",
+      "firmware/services/operating_state.h",
+      "firmware/services/telemetry.c",
+      "firmware/services/telemetry.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ],
+    "file_hashes": {
+      "firmware/services/dashboard.c": "791178bce72c8a50f3c9b9a025fbd489",
+      "main/entry.c": "112870a6ae4d68af6a6173e331f96ff5",
+      "CMakeLists.txt": "80b6f4d3559efa2983b8d8ea6345a583",
+      "main/firmgen_sources.cmake": "52f72bb476f6c182c2bace6ae0e7460d",
+      "main/CMakeLists.txt": "13cdedb30df9faa5fb75761b9c0354ed",
+      "firmware/configs/app_config.h": "7e9f678aba4816d43667a300e198aed7",
+      "firmware/services/commissioning.h": "1b131ebcb477857aed5e55ff6051636d",
+      "firmware/platforms/esp32/sensor_platform.h": "bffd31c6fc633e3d2bf0154e5ebb7ab9",
+      "firmware/utils/logger/logger.c": "8e992fef35c9a4678ec38e60902d741d",
+      "firmware/configs/build_config.h": "dd997e9a0a461df28c370a61963fd7e5",
+      "sdkconfig.defaults": "79e9877c50e97d149a05ef56a4e2bbb1",
+      "firmware/services/telemetry.c": "64eb3247ae3aecb816e519635fe607f6",
+      "firmware/utils/logger/logger.h": "2c284c641c88c6a4fff52db62e8d1ea5",
+      "firmware/services/dashboard.h": "c9b9b8e425b14c44a3dbeb87134fa27d",
+      "firmware/platforms/esp32/sensor_platform.c": "4b5cc1798311a5af069e9a3abef33f4f",
+      "firmware/utils/helpers/helpers.h": "ec8b635b7e5b55f8aeb8f47c3ff34312",
+      "firmware/services/operating_state.h": "1db1f982a1b42540d8ddf4b0132dce5d",
+      "firmware/app/app.h": "bc88844840b4c743283b026f851e00f0",
+      "firmware/app/app.c": "0303ac682a420b67417ebd71240c9eb7",
+      "sdkconfig": "4791af078a030928d42cf57b5077133b",
+      "firmware/configs/platform_config.h": "010b01144dbd2d3fb63f3053b158ab7a",
+      "firmware/platforms/esp32/led_platform.c": "2b8d48cd909d72ef5982c25153750e30",
+      "firmware/services/anomaly_detector.h": "dc410f2298a22bcabca66c9509d463ef",
+      "firmware/services/baseline_learner.c": "3efa4cb4181cf7bd0d6b8d3e44a8228f",
+      "main/idf_component.yml": "7c3069be952336401c3d6895e32809b0",
+      "firmware/utils/helpers/helpers.c": "914568ab7415fec17e74f306cbb5ae09",
+      "firmware/services/commissioning.c": "c83280aaaaa381ce1153160e22917780",
+      "firmware/services/telemetry.h": "3d50bf9f889d04c60bd24e8903a37467",
+      "firmware/services/operating_state.c": "c1b61659c1dff0bde926ec630b563255",
+      "firmware/interfaces/vibration_source.h": "e91adc5e2b3694e74c9d655d92076383",
+      "firmware/services/anomaly_detector.c": "8560dca87355315b8c19f726b2336b9c",
+      "firmware/services/baseline_learner.h": "949a0a77d84c2529e2d72f53cc195d23",
+      "firmware/platforms/esp32/led_platform.h": "58b9a5db1af01f6217480a00a76f6241"
+    }
+  },
+  "approval": {
+    "status": "stale"
+  },
+  "nodes": [
+    {
+      "id": "boot",
+      "node_type": "system_init",
+      "label": "Boot / app_main",
+      "properties": {
+        "target": "esp32c3"
+      },
+      "source_refs": [
+        {
+          "file": "main/entry.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "main/entry.c"
+        ]
+      },
+      "editable_fields": [
+        "target"
+      ],
+      "layer": "system",
+      "ai_summary": "Bootstraps firmware startup and initializes core subsystems.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "led_gpio",
+      "node_type": "gpio_output",
+      "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+      "properties": {
+        "pin": 8
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "pin"
+      ],
+      "layer": "physical",
+      "ai_summary": "Drives GPIO 8 as an output signal.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "sensor_sim_stopping_ms",
+      "node_type": "sensor_input",
+      "label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+      "properties": {
+        "pin": 136
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "pin"
+      ],
+      "layer": "physical",
+      "ai_summary": "Samples sensor state from GPIO 136.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "app_task",
+      "node_type": "rtos_task",
+      "label": "Task app_task",
+      "properties": {
+        "task_name": "app_task",
+        "priority": 5,
+        "stack_size": 4096,
+        "period_ms": 5.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for app_task.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "led",
+      "node_type": "rtos_task",
+      "label": "Task led",
+      "properties": {
+        "task_name": "led",
+        "priority": 5,
+        "stack_size": 2048,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/led_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/led_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for led.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "sensor_200hz",
+      "node_type": "rtos_task",
+      "label": "Task sensor_200hz",
+      "properties": {
+        "task_name": "sensor_200hz",
+        "priority": 5,
+        "stack_size": 4096,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/sensor_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/sensor_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for sensor_200hz.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "sensor_200hz_1",
+      "node_type": "rtos_task",
+      "label": "Task sensor_200hz",
+      "properties": {
+        "task_name": "sensor_200hz",
+        "priority": 5,
+        "stack_size": 4096,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/sensor_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/sensor_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for sensor_200hz.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "commission",
+      "node_type": "rtos_task",
+      "label": "Task commission",
+      "properties": {
+        "task_name": "commission",
+        "priority": 5,
+        "stack_size": 3072,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/services/commissioning.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/services/commissioning.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for commission.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "logger",
+      "node_type": "logger",
+      "label": "Logger",
+      "properties": {
+        "tag": "APP",
+        "level": "info"
+      },
+      "source_refs": [
+        {
+          "file": "firmware/app/app.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/app/app.c"
+        ]
+      },
+      "editable_fields": [
+        "tag",
+        "level"
+      ],
+      "layer": "system",
+      "ai_summary": "Emits structured runtime logs for diagnostics.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "_i2c",
+      "node_type": "i2c_device",
+      "label": "APP I2C Device",
+      "properties": {
+        "sda_pin": 4,
+        "scl_pin": 5,
+        "address": "0x68",
+        "clock_hz": 100000,
+        "pin_bindings": {
+          "sda": 4,
+          "scl": 5
+        }
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "sda_pin",
+        "scl_pin",
+        "address",
+        "clock_hz"
+      ],
+      "layer": "physical",
+      "ai_summary": "Represents an I2C peripheral with mapped bus pins.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "timer_node",
+      "node_type": "timer_node",
+      "label": "Timer",
+      "properties": {
+        "timer_name": "periodic_timer",
+        "period_ms": 1000.0,
+        "auto_reload": true
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/sensor_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/sensor_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "timer_name",
+        "period_ms",
+        "auto_reload"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Schedules periodic callbacks for time-based workflow.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "storage_manager",
+      "node_type": "storage_manager",
+      "label": "Storage Manager",
+      "properties": {
+        "backend": "nvs",
+        "namespace": "app"
+      },
+      "source_refs": [
+        {
+          "file": "firmware/services/baseline_learner.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/services/baseline_learner.c"
+        ]
+      },
+      "editable_fields": [
+        "backend",
+        "namespace"
+      ],
+      "layer": "system",
+      "ai_summary": "Persists runtime state and configuration data.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "wifi",
+      "node_type": "wifi_manager",
+      "label": "WiFi",
+      "properties": {
+        "mode": "station"
+      },
+      "source_refs": [
+        {
+          "file": "firmware/services/dashboard.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/services/dashboard.c"
+        ]
+      },
+      "editable_fields": [
+        "ssid",
+        "password",
+        "mode"
+      ],
+      "layer": "network",
+      "ai_summary": "Manages Wi-Fi connectivity and network state.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "event_handler",
+      "node_type": "event_handler",
+      "label": "Event Handler",
+      "properties": {
+        "event_base": "ESP_EVENT_ANY_BASE",
+        "event_id": -1
+      },
+      "source_refs": [
+        {
+          "file": "firmware/services/dashboard.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/services/dashboard.c"
+        ]
+      },
+      "editable_fields": [
+        "event_base",
+        "event_id"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Queues and dispatches asynchronous firmware events.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "mqtt",
+      "node_type": "mqtt_client",
+      "label": "MQTT",
+      "properties": {
+        "broker_url": "/api/command",
+        "topic": "esp32/sensor",
+        "qos": 0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/services/dashboard.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "0a16acfaf89999948d96d65dc687cb0f"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/services/dashboard.c"
+        ]
+      },
+      "editable_fields": [
+        "broker_url",
+        "topic",
+        "client_id",
+        "qos"
+      ],
+      "layer": "network",
+      "ai_summary": "Publishes and receives MQTT messages on `esp32/sensor`.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_boot_app_task",
+      "source_node_id": "boot",
+      "target_node_id": "app_task",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "app_task_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_led",
+      "source_node_id": "boot",
+      "target_node_id": "led",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "led_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_sensor_200hz",
+      "source_node_id": "boot",
+      "target_node_id": "sensor_200hz",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "sensor_200hz_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_sensor_200hz_1",
+      "source_node_id": "boot",
+      "target_node_id": "sensor_200hz_1",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "sensor_200hz_1_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_commission",
+      "source_node_id": "boot",
+      "target_node_id": "commission",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "commission_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_logger",
+      "source_node_id": "boot",
+      "target_node_id": "logger",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "logger_exec_in_1",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_boot__i2c",
+      "source_node_id": "boot",
+      "target_node_id": "_i2c",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "_i2c_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_boot_timer_node",
+      "source_node_id": "boot",
+      "target_node_id": "timer_node",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "timer_node_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_boot_storage_manager",
+      "source_node_id": "boot",
+      "target_node_id": "storage_manager",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "storage_manager_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_boot_wifi",
+      "source_node_id": "boot",
+      "target_node_id": "wifi",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "wifi_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_led_gpio_exec_in",
+      "source_node_id": "app_task",
+      "target_node_id": "led_gpio",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "led_gpio_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_timer_node_app_task_trigger_in",
+      "source_node_id": "timer_node",
+      "target_node_id": "app_task",
+      "source_port_id": "timer_node_event_out_1",
+      "target_port_id": "app_task_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_timer_node_led_trigger_in",
+      "source_node_id": "timer_node",
+      "target_node_id": "led",
+      "source_port_id": "timer_node_event_out_1",
+      "target_port_id": "led_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_timer_node_sensor_200hz_trigger_in",
+      "source_node_id": "timer_node",
+      "target_node_id": "sensor_200hz",
+      "source_port_id": "timer_node_event_out_1",
+      "target_port_id": "sensor_200hz_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_timer_node_sensor_200hz_1_trigger_in",
+      "source_node_id": "timer_node",
+      "target_node_id": "sensor_200hz_1",
+      "source_port_id": "timer_node_event_out_1",
+      "target_port_id": "sensor_200hz_1_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_timer_node_commission_trigger_in",
+      "source_node_id": "timer_node",
+      "target_node_id": "commission",
+      "source_port_id": "timer_node_event_out_1",
+      "target_port_id": "commission_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_sim_stopping_ms_logger_data_in",
+      "source_node_id": "sensor_sim_stopping_ms",
+      "target_node_id": "logger",
+      "source_port_id": "sensor_sim_stopping_ms_data_out_1",
+      "target_port_id": "logger_data_in_0",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_sim_stopping_ms__i2c_data_in",
+      "source_node_id": "sensor_sim_stopping_ms",
+      "target_node_id": "_i2c",
+      "source_port_id": "sensor_sim_stopping_ms_data_out_1",
+      "target_port_id": "_i2c_data_in_1",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_sim_stopping_ms_storage_manager_data_in",
+      "source_node_id": "sensor_sim_stopping_ms",
+      "target_node_id": "storage_manager",
+      "source_port_id": "sensor_sim_stopping_ms_data_out_1",
+      "target_port_id": "storage_manager_data_in_1",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_sim_stopping_ms_event_handler_event_in",
+      "source_node_id": "sensor_sim_stopping_ms",
+      "target_node_id": "event_handler",
+      "source_port_id": "sensor_sim_stopping_ms_data_out_1",
+      "target_port_id": "event_handler_event_in_0",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "signals",
+      "validated": false
+    },
+    {
+      "id": "e_wifi_mqtt_network_in",
+      "source_node_id": "wifi",
+      "target_node_id": "mqtt",
+      "source_port_id": "wifi_network_out_1",
+      "target_port_id": "mqtt_network_in_0",
+      "kind": "network",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "connects",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_sim_stopping_ms_mqtt_data_in",
+      "source_node_id": "sensor_sim_stopping_ms",
+      "target_node_id": "mqtt",
+      "source_port_id": "sensor_sim_stopping_ms_data_out_1",
+      "target_port_id": "mqtt_data_in_1",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_sensor_sim_stopping_ms_control",
+      "source_node_id": "app_task",
+      "target_node_id": "sensor_sim_stopping_ms",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "sensor_sim_stopping_ms_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_logger_control",
+      "source_node_id": "app_task",
+      "target_node_id": "logger",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "logger_exec_in_1",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task__i2c_control",
+      "source_node_id": "app_task",
+      "target_node_id": "_i2c",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "_i2c_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_timer_node_control",
+      "source_node_id": "app_task",
+      "target_node_id": "timer_node",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "timer_node_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_storage_manager_control",
+      "source_node_id": "app_task",
+      "target_node_id": "storage_manager",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "storage_manager_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_wifi_control",
+      "source_node_id": "app_task",
+      "target_node_id": "wifi",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "wifi_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_event_handler_control",
+      "source_node_id": "app_task",
+      "target_node_id": "event_handler",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "event_handler_event_in_0",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_app_task_mqtt_control",
+      "source_node_id": "app_task",
+      "target_node_id": "mqtt",
+      "source_port_id": "app_task_exec_out_2",
+      "target_port_id": "mqtt_data_in_1",
+      "kind": "execution",
+      "confidence": 0.86,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    }
+  ],
+  "layers": {
+    "physical": [
+      "led_gpio",
+      "sensor_sim_stopping_ms",
+      "_i2c"
+    ],
+    "runtime": [
+      "app_task",
+      "led",
+      "sensor_200hz",
+      "sensor_200hz_1",
+      "commission",
+      "timer_node",
+      "event_handler"
+    ],
+    "network": [
+      "wifi",
+      "mqtt"
+    ],
+    "system": [
+      "boot",
+      "logger",
+      "storage_manager"
+    ]
+  },
+  "partitions": [],
+  "components": [
+    {
+      "id": "main",
+      "path": "main/CMakeLists.txt",
+      "requires": [
+        "esp_driver_gpio",
+        "esp_driver_i2c",
+        "esp_timer",
+        "esp_wifi",
+        "esp_event",
+        "esp_netif",
+        "esp_http_server",
+        "nvs_flash",
+        "freertos",
+        "log",
+        "espressif__led_strip",
+        "firmgen_telemetry"
+      ],
+      "source_files": []
+    }
+  ],
+  "summary": {
+    "headline": "15 nodes, 30 connections — valid",
+    "node_count": 15,
+    "edge_count": 30,
+    "warnings": [
+      "Cyclic execution path detected involving: boot -> app_task -> timer_node -> app_task"
+    ]
+  },
+  "diagrams": {
+    "hld": {
+      "title": "High-Level Design",
+      "mermaid": "graph TD\n    hld_user[\"Mobile App / Web Dashboard\"]\n    hld_cloud[\"MQTT Broker / Cloud Service\"]\n    hld_esp32[\"ESP32 Main Controller\"]\n    hld_sensor_sim_stopping_ms[\"SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)\"]\n    hld_led_gpio[\"LED GPIO (GPIO 8, APP_LED_GPIO)\"]\n    hld__i2c[\"APP I2C Device\"]\n    hld_storage_manager[\"Storage Manager\"]\n    hld_wifi[\"WiFi\"]\n    hld_app_task[\"Task app_task\"]\n    hld_commission[\"Task commission\"]\n    hld_internet[(Internet)]\n    hld_user <-->|View Data / Configure| hld_cloud\n    hld_cloud <-->|MQTT Messages| hld_esp32\n    hld_esp32 -->|Sensor Data| hld_sensor_sim_stopping_ms\n    hld_esp32 -->|Control Signals| hld_led_gpio\n    hld_esp32 -->|Peripheral I/O| hld__i2c\n    hld_esp32 -->|Read / Write Config| hld_storage_manager\n    hld_esp32 -->|Network Management| hld_wifi\n    hld_esp32 -->|Firmware Logic| hld_app_task\n    hld_esp32 -->|Firmware Logic| hld_commission\n    hld_app_task -->|Control APP I2C Device| hld__i2c\n    hld_app_task -->|Control LED GPIO (GPIO 8, APP_LED_GPIO)| hld_led_gpio\n    hld_app_task -->|Control SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)| hld_sensor_sim_stopping_ms\n    hld_app_task -->|Control Storage Manager| hld_storage_manager\n    hld_app_task -->|Control WiFi| hld_wifi\n    hld_sensor_sim_stopping_ms -->|Data Flow| hld__i2c\n    hld_sensor_sim_stopping_ms -->|Data Flow| hld_storage_manager\n    hld_wifi -->|Internet Access| hld_internet\n    hld_cloud -->|Cloud Route| hld_internet"
+    },
+    "lld": {
+      "title": "Low-Level Design (Firmware Workflow)",
+      "mermaid": "flowchart TD\n  subgraph freertos_runtime[\"FreeRTOS\"]\n    app_task[\"Task app_task\"]\n    commission[\"Task commission\"]\n    led[\"Task led\"]\n    sensor_200hz[\"Task sensor_200hz\"]\n    sensor_200hz_1[\"Task sensor_200hz\"]\n    event_handler[\"Event Handler\"]\n    timer_node[\"Timer\"]\n  end\n  sensor_sim_stopping_ms[\"SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)\"]\n  led_gpio[\"LED GPIO (GPIO 8, APP_LED_GPIO)\"]\n  _i2c[\"APP I2C Device\"]\n  storage_manager[\"Storage Manager\"]\n  wifi[\"WiFi\"]\n  mqtt[\"MQTT\"]\n  logger[\"Logger\"]\n  app_task --> _i2c\n  app_task --> event_handler\n  app_task --> led_gpio\n  app_task --> logger\n  app_task --> mqtt\n  app_task --> sensor_sim_stopping_ms\n  app_task --> storage_manager\n  app_task --> timer_node\n  app_task --> wifi\n  sensor_sim_stopping_ms --> _i2c\n  sensor_sim_stopping_ms --> event_handler\n  sensor_sim_stopping_ms --> logger\n  sensor_sim_stopping_ms --> mqtt\n  sensor_sim_stopping_ms --> storage_manager\n  timer_node --> app_task\n  timer_node --> commission\n  timer_node --> led\n  timer_node --> sensor_200hz_1\n  timer_node --> sensor_200hz\n  wifi --> mqtt"
+    },
+    "sequence": {
+      "title": "Sequence Diagram",
+      "mermaid": "sequenceDiagram\n    participant boot as 1. Boot / app_main\n    participant app_task as 2. Task app_task\n    participant led as 3. Task led\n    participant sensor_200hz as 4. Task sensor_200hz\n    participant sensor_200hz_1 as 5. Task sensor_200hz\n    participant commission as 6. Task commission\n    participant logger as 7. Logger\n    participant _i2c as 8. APP I2C Device\n    participant timer_node as 9. Timer\n    participant storage_manager as 10. Storage Manager\n    participant wifi as 11. WiFi\n    participant led_gpio as 12. LED GPIO (GPIO 8, APP_LED_GPIO)\n    participant event_handler as 13. Event Handler\n    participant mqtt as 14. MQTT\n    participant sensor_sim_stopping_ms as 15. SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)\n    boot->>app_task: spawns\n    boot->>led: spawns\n    boot->>sensor_200hz: spawns\n    boot->>sensor_200hz_1: spawns\n    boot->>commission: spawns\n    boot->>logger: initializes\n    boot->>_i2c: initializes\n    boot->>timer_node: initializes\n    boot->>storage_manager: initializes\n    boot->>wifi: initializes\n    app_task->>logger: controls\n    app_task->>_i2c: controls\n    app_task->>timer_node: controls\n    app_task->>storage_manager: controls\n    app_task->>wifi: controls\n    app_task->>led_gpio: controls\n    app_task->>event_handler: controls\n    app_task->>mqtt: controls\n    timer_node->>app_task: triggers\n    timer_node->>led: triggers\n    timer_node->>sensor_200hz: triggers\n    timer_node->>sensor_200hz_1: triggers\n    timer_node->>commission: triggers\n    wifi->>mqtt: connects\n    sensor_sim_stopping_ms->>logger: data_flow\n    sensor_sim_stopping_ms->>_i2c: data_flow\n    sensor_sim_stopping_ms->>storage_manager: data_flow\n    sensor_sim_stopping_ms->>event_handler: signals\n    sensor_sim_stopping_ms->>mqtt: data_flow",
+      "participants": [
+        "boot",
+        "app_task",
+        "led",
+        "sensor_200hz",
+        "sensor_200hz_1",
+        "commission",
+        "logger",
+        "_i2c",
+        "timer_node",
+        "storage_manager",
+        "wifi",
+        "led_gpio",
+        "event_handler",
+        "mqtt",
+        "sensor_sim_stopping_ms"
+      ],
+      "generated_from": [
+        "main/entry.c",
+        "firmware/configs/app_config.h",
+        "firmware/platforms/esp32/led_platform.c",
+        "firmware/platforms/esp32/sensor_platform.c",
+        "firmware/services/commissioning.c",
+        "firmware/app/app.c",
+        "firmware/services/baseline_learner.c",
+        "firmware/services/dashboard.c"
+      ]
+    },
+    "hld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-hld",
+      "name": "craftiai_sentinel topology — HLD",
+      "description": "High-level architecture — MCU controller, firmware modules, and integrations",
+      "nodes": [
+        {
+          "id": "hld_user",
+          "node_type": "user_actor",
+          "label": "Mobile App / Web Dashboard",
+          "description": "External user interface for monitoring data and sending configuration.",
+          "ports": [
+            {
+              "id": "hld_user::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_user::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "user"
+          },
+          "visual": {
+            "x": 0.0,
+            "y": -496.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_cloud",
+          "node_type": "cloud_service",
+          "label": "MQTT Broker / Cloud Service",
+          "description": "External cloud endpoint for command/control and telemetry exchange.",
+          "ports": [
+            {
+              "id": "hld_cloud::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_cloud::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "cloud"
+          },
+          "visual": {
+            "x": 0.0,
+            "y": -232.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_esp32",
+          "node_type": "system_init",
+          "label": "ESP32 Main Controller",
+          "description": "Main firmware control node coordinating peripherals, storage, and connectivity.",
+          "ports": [
+            {
+              "id": "hld_esp32::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_esp32::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "controller"
+          },
+          "visual": {
+            "x": 0.0,
+            "y": 32.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_sensor_sim_stopping_ms",
+          "node_type": "sensor_input",
+          "label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+          "description": "Samples sensor state from GPIO 136.",
+          "ports": [
+            {
+              "id": "hld_sensor_sim_stopping_ms::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_sensor_sim_stopping_ms::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 136,
+            "hld_role": "peripheral",
+            "source_node_id": "sensor_sim_stopping_ms"
+          },
+          "hardware": {
+            "gpio": 136,
+            "bus": "gpio",
+            "pin_label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": 296.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_led_gpio",
+          "node_type": "gpio_output",
+          "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "hld_led_gpio::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_led_gpio::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8,
+            "hld_role": "peripheral",
+            "source_node_id": "led_gpio"
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 430.0,
+            "y": -496.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "hld__i2c",
+          "node_type": "i2c_device",
+          "label": "APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "hld__i2c::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld__i2c::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            },
+            "hld_role": "peripheral",
+            "source_node_id": "_i2c"
+          },
+          "execution": {},
+          "visual": {
+            "x": 430.0,
+            "y": -232.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "hld_storage_manager",
+          "node_type": "storage_manager",
+          "label": "Storage Manager",
+          "description": "Persists runtime state and configuration data.",
+          "ports": [
+            {
+              "id": "hld_storage_manager::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_storage_manager::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "backend": "nvs",
+            "namespace": "app",
+            "hld_role": "storage",
+            "source_node_id": "storage_manager"
+          },
+          "execution": {},
+          "visual": {
+            "x": 430.0,
+            "y": 32.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "hld_wifi",
+          "node_type": "wifi_manager",
+          "label": "WiFi",
+          "description": "Manages Wi-Fi connectivity and network state.",
+          "ports": [
+            {
+              "id": "hld_wifi::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_wifi::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "mode": "station",
+            "hld_role": "connectivity",
+            "source_node_id": "wifi"
+          },
+          "execution": {},
+          "visual": {
+            "x": 430.0,
+            "y": 296.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "hld_app_task",
+          "node_type": "rtos_task",
+          "label": "Task app_task",
+          "description": "Executes RTOS loop logic for app_task.",
+          "ports": [
+            {
+              "id": "hld_app_task::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_app_task::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "app_task",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0,
+            "hld_role": "runtime",
+            "source_node_id": "app_task"
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0
+          },
+          "visual": {
+            "x": 860.0,
+            "y": -364.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "hld_commission",
+          "node_type": "rtos_task",
+          "label": "Task commission",
+          "description": "Executes RTOS loop logic for commission.",
+          "ports": [
+            {
+              "id": "hld_commission::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_commission::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "commission",
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0,
+            "hld_role": "runtime",
+            "source_node_id": "commission"
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 860.0,
+            "y": -100.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "hld_internet",
+          "node_type": "internet",
+          "label": "Internet",
+          "description": "External network backbone used for cloud transport.",
+          "ports": [
+            {
+              "id": "hld_internet::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_internet::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "internet"
+          },
+          "visual": {
+            "x": 860.0,
+            "y": 164.0,
+            "layer": 2
+          }
+        }
+      ],
+      "connections": [
+        [
+          "hld_user::hld::out",
+          "hld_cloud::hld::in"
+        ],
+        [
+          "hld_cloud::hld::out",
+          "hld_user::hld::in"
+        ],
+        [
+          "hld_cloud::hld::out",
+          "hld_esp32::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_cloud::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_sensor_sim_stopping_ms::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_led_gpio::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld__i2c::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_storage_manager::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_wifi::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_app_task::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_commission::hld::in"
+        ],
+        [
+          "hld_app_task::hld::out",
+          "hld__i2c::hld::in"
+        ],
+        [
+          "hld_app_task::hld::out",
+          "hld_led_gpio::hld::in"
+        ],
+        [
+          "hld_app_task::hld::out",
+          "hld_sensor_sim_stopping_ms::hld::in"
+        ],
+        [
+          "hld_app_task::hld::out",
+          "hld_storage_manager::hld::in"
+        ],
+        [
+          "hld_app_task::hld::out",
+          "hld_wifi::hld::in"
+        ],
+        [
+          "hld_sensor_sim_stopping_ms::hld::out",
+          "hld__i2c::hld::in"
+        ],
+        [
+          "hld_sensor_sim_stopping_ms::hld::out",
+          "hld_storage_manager::hld::in"
+        ],
+        [
+          "hld_wifi::hld::out",
+          "hld_internet::hld::in"
+        ],
+        [
+          "hld_cloud::hld::out",
+          "hld_internet::hld::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 280.0,
+        "layer_gap": 150.0,
+        "node_gap": 64.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "diagram_view": "hld",
+          "hld_edge_labels": {
+            "hld_user::hld::out|hld_cloud::hld::in": "View Data / Configure",
+            "hld_cloud::hld::out|hld_user::hld::in": "View Data / Configure",
+            "hld_cloud::hld::out|hld_esp32::hld::in": "MQTT Messages",
+            "hld_esp32::hld::out|hld_cloud::hld::in": "MQTT Messages",
+            "hld_esp32::hld::out|hld_sensor_sim_stopping_ms::hld::in": "Sensor Data",
+            "hld_esp32::hld::out|hld_led_gpio::hld::in": "Control Signals",
+            "hld_esp32::hld::out|hld__i2c::hld::in": "Peripheral I/O",
+            "hld_esp32::hld::out|hld_storage_manager::hld::in": "Read / Write Config",
+            "hld_esp32::hld::out|hld_wifi::hld::in": "Network Management",
+            "hld_esp32::hld::out|hld_app_task::hld::in": "Firmware Logic",
+            "hld_esp32::hld::out|hld_commission::hld::in": "Firmware Logic",
+            "hld_app_task::hld::out|hld__i2c::hld::in": "Control APP I2C Device",
+            "hld_app_task::hld::out|hld_led_gpio::hld::in": "Control LED GPIO (GPIO 8, APP_LED_GPIO)",
+            "hld_app_task::hld::out|hld_sensor_sim_stopping_ms::hld::in": "Control SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+            "hld_app_task::hld::out|hld_storage_manager::hld::in": "Control Storage Manager",
+            "hld_app_task::hld::out|hld_wifi::hld::in": "Control WiFi",
+            "hld_sensor_sim_stopping_ms::hld::out|hld__i2c::hld::in": "Data Flow",
+            "hld_sensor_sim_stopping_ms::hld::out|hld_storage_manager::hld::in": "Data Flow",
+            "hld_wifi::hld::out|hld_internet::hld::in": "Internet Access",
+            "hld_cloud::hld::out|hld_internet::hld::in": "Cloud Route"
+          },
+          "hld_projection": "architecture"
+        }
+      }
+    },
+    "lld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-lld",
+      "name": "craftiai_sentinel topology — LLD",
+      "description": "Low-level design — FreeRTOS and peripheral/service workflow",
+      "nodes": [
+        {
+          "id": "app_task",
+          "node_type": "rtos_task",
+          "label": "Task app_task",
+          "description": "Executes RTOS loop logic for app_task.",
+          "ports": [
+            {
+              "id": "app_task::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "app_task::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "app_task",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0
+          },
+          "visual": {
+            "x": -560.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "led",
+          "node_type": "rtos_task",
+          "label": "Task led",
+          "description": "Executes RTOS loop logic for led.",
+          "ports": [
+            {
+              "id": "led::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "led",
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": -232.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "commission",
+          "node_type": "rtos_task",
+          "label": "Task commission",
+          "description": "Executes RTOS loop logic for commission.",
+          "ports": [
+            {
+              "id": "commission::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "commission::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "commission",
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 96.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "sensor_200hz",
+          "node_type": "rtos_task",
+          "label": "Task sensor_200hz",
+          "description": "Executes RTOS loop logic for sensor_200hz.",
+          "ports": [
+            {
+              "id": "sensor_200hz::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_200hz::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_200hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 424.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "sensor_200hz_1",
+          "node_type": "rtos_task",
+          "label": "Task sensor_200hz",
+          "description": "Executes RTOS loop logic for sensor_200hz.",
+          "ports": [
+            {
+              "id": "sensor_200hz_1::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_200hz_1::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_200hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": -560.0,
+            "y": 320.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "event_handler",
+          "node_type": "event_handler",
+          "label": "Event Handler",
+          "description": "Queues and dispatches asynchronous firmware events.",
+          "ports": [
+            {
+              "id": "event_handler::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "event_handler::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "event_base": "ESP_EVENT_ANY_BASE",
+            "event_id": -1,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "event_handler"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": -232.0,
+            "y": 320.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "timer_node",
+          "node_type": "timer_node",
+          "label": "Timer",
+          "description": "Schedules periodic callbacks for time-based workflow.",
+          "ports": [
+            {
+              "id": "timer_node::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "timer_node::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "timer_name": "periodic_timer",
+            "period_ms": 1000.0,
+            "auto_reload": true,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "timer_node"
+            }
+          },
+          "execution": {
+            "period_ms": 1000.0
+          },
+          "visual": {
+            "x": 96.0,
+            "y": 320.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "sensor_sim_stopping_ms",
+          "node_type": "sensor_input",
+          "label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+          "description": "Samples sensor state from GPIO 136.",
+          "ports": [
+            {
+              "id": "sensor_sim_stopping_ms::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_sim_stopping_ms::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 136,
+            "lld_workflow": {
+              "role": "peripheral",
+              "node_type": "sensor_input"
+            }
+          },
+          "hardware": {
+            "gpio": 136,
+            "bus": "gpio",
+            "pin_label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 424.0,
+            "y": 320.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "led_gpio",
+          "node_type": "gpio_output",
+          "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "led_gpio::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led_gpio::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8,
+            "lld_workflow": {
+              "role": "peripheral",
+              "node_type": "gpio_output"
+            }
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": -560.0,
+            "y": 640.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "_i2c",
+          "node_type": "i2c_device",
+          "label": "APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "_i2c::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "_i2c::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            },
+            "lld_workflow": {
+              "role": "peripheral",
+              "node_type": "i2c_device"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": -232.0,
+            "y": 640.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "storage_manager",
+          "node_type": "storage_manager",
+          "label": "Storage Manager",
+          "description": "Persists runtime state and configuration data.",
+          "ports": [
+            {
+              "id": "storage_manager::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "storage_manager::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "backend": "nvs",
+            "namespace": "app",
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "storage_manager"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 96.0,
+            "y": 640.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "wifi",
+          "node_type": "wifi_manager",
+          "label": "WiFi",
+          "description": "Manages Wi-Fi connectivity and network state.",
+          "ports": [
+            {
+              "id": "wifi::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "wifi::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "mode": "station",
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "wifi_manager"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 424.0,
+            "y": 640.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "mqtt",
+          "node_type": "mqtt_client",
+          "label": "MQTT",
+          "description": "Publishes and receives MQTT messages on `esp32/sensor`.",
+          "ports": [
+            {
+              "id": "mqtt::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "mqtt::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "broker_url": "/api/command",
+            "topic": "esp32/sensor",
+            "qos": 0,
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "mqtt_client"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": -280.0,
+            "y": 960.0,
+            "layer": 3
+          }
+        },
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info",
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "logger"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 48.0,
+            "y": 960.0,
+            "layer": 3
+          }
+        }
+      ],
+      "connections": [
+        [
+          "app_task::ldd::out",
+          "led_gpio::ldd::in"
+        ],
+        [
+          "timer_node::ldd::out",
+          "app_task::ldd::in"
+        ],
+        [
+          "timer_node::ldd::out",
+          "led::ldd::in"
+        ],
+        [
+          "timer_node::ldd::out",
+          "sensor_200hz::ldd::in"
+        ],
+        [
+          "timer_node::ldd::out",
+          "sensor_200hz_1::ldd::in"
+        ],
+        [
+          "timer_node::ldd::out",
+          "commission::ldd::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::ldd::out",
+          "logger::ldd::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::ldd::out",
+          "_i2c::ldd::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::ldd::out",
+          "storage_manager::ldd::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::ldd::out",
+          "event_handler::ldd::in"
+        ],
+        [
+          "wifi::ldd::out",
+          "mqtt::ldd::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::ldd::out",
+          "mqtt::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "sensor_sim_stopping_ms::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "logger::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "_i2c::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "timer_node::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "storage_manager::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "wifi::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "event_handler::ldd::in"
+        ],
+        [
+          "app_task::ldd::out",
+          "mqtt::ldd::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "vertical",
+        "node_width": 280.0,
+        "layer_gap": 120.0,
+        "node_gap": 48.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "diagram_view": "ldd",
+          "ldd_edge_labels": {
+            "app_task::ldd::out|timer_node::ldd::in": "controls",
+            "app_task::ldd::out|led_gpio::ldd::in": "controls",
+            "timer_node::ldd::out|led::ldd::in": "triggers",
+            "timer_node::ldd::out|sensor_200hz::ldd::in": "triggers",
+            "sensor_sim_stopping_ms::ldd::out|mqtt::ldd::in": "data_flow",
+            "app_task::ldd::out|storage_manager::ldd::in": "controls",
+            "app_task::ldd::out|logger::ldd::in": "controls",
+            "app_task::ldd::out|sensor_sim_stopping_ms::ldd::in": "controls",
+            "app_task::ldd::out|event_handler::ldd::in": "controls",
+            "timer_node::ldd::out|app_task::ldd::in": "triggers",
+            "sensor_sim_stopping_ms::ldd::out|logger::ldd::in": "data_flow",
+            "sensor_sim_stopping_ms::ldd::out|event_handler::ldd::in": "signals",
+            "app_task::ldd::out|wifi::ldd::in": "controls",
+            "wifi::ldd::out|mqtt::ldd::in": "connects",
+            "sensor_sim_stopping_ms::ldd::out|storage_manager::ldd::in": "data_flow",
+            "timer_node::ldd::out|commission::ldd::in": "triggers",
+            "timer_node::ldd::out|sensor_200hz_1::ldd::in": "triggers",
+            "app_task::ldd::out|mqtt::ldd::in": "controls",
+            "sensor_sim_stopping_ms::ldd::out|_i2c::ldd::in": "data_flow",
+            "app_task::ldd::out|_i2c::ldd::in": "controls"
+          }
+        }
+      }
+    },
+    "sequence_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-sequence",
+      "name": "craftiai_sentinel topology — Sequence",
+      "description": "Execution and initialization order",
+      "nodes": [
+        {
+          "id": "boot",
+          "node_type": "system_init",
+          "label": "1. Boot / app_main",
+          "description": "Bootstraps firmware startup and initializes core subsystems.",
+          "ports": [
+            {
+              "id": "boot::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "boot::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "target": "esp32c3"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": 80.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "app_task",
+          "node_type": "rtos_task",
+          "label": "2. Task app_task",
+          "description": "Executes RTOS loop logic for app_task.",
+          "ports": [
+            {
+              "id": "app_task::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "app_task::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "app_task",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 5.0
+          },
+          "visual": {
+            "x": 320.0,
+            "y": 80.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "led",
+          "node_type": "rtos_task",
+          "label": "3. Task led",
+          "description": "Executes RTOS loop logic for led.",
+          "ports": [
+            {
+              "id": "led::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "led",
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 640.0,
+            "y": 80.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "sensor_200hz",
+          "node_type": "rtos_task",
+          "label": "4. Task sensor_200hz",
+          "description": "Executes RTOS loop logic for sensor_200hz.",
+          "ports": [
+            {
+              "id": "sensor_200hz::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_200hz::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_200hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 960.0,
+            "y": 80.0,
+            "layer": 3
+          }
+        },
+        {
+          "id": "sensor_200hz_1",
+          "node_type": "rtos_task",
+          "label": "5. Task sensor_200hz",
+          "description": "Executes RTOS loop logic for sensor_200hz.",
+          "ports": [
+            {
+              "id": "sensor_200hz_1::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_200hz_1::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_200hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 1280.0,
+            "y": 80.0,
+            "layer": 4
+          }
+        },
+        {
+          "id": "commission",
+          "node_type": "rtos_task",
+          "label": "6. Task commission",
+          "description": "Executes RTOS loop logic for commission.",
+          "ports": [
+            {
+              "id": "commission::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "commission::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "commission",
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 3072,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 1600.0,
+            "y": 80.0,
+            "layer": 5
+          }
+        },
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "7. Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info"
+          },
+          "execution": {},
+          "visual": {
+            "x": 1920.0,
+            "y": 80.0,
+            "layer": 6
+          }
+        },
+        {
+          "id": "_i2c",
+          "node_type": "i2c_device",
+          "label": "8. APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "_i2c::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "_i2c::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 2240.0,
+            "y": 80.0,
+            "layer": 7
+          }
+        },
+        {
+          "id": "timer_node",
+          "node_type": "timer_node",
+          "label": "9. Timer",
+          "description": "Schedules periodic callbacks for time-based workflow.",
+          "ports": [
+            {
+              "id": "timer_node::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "timer_node::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "timer_name": "periodic_timer",
+            "period_ms": 1000.0,
+            "auto_reload": true
+          },
+          "execution": {
+            "period_ms": 1000.0
+          },
+          "visual": {
+            "x": 2560.0,
+            "y": 80.0,
+            "layer": 8
+          }
+        },
+        {
+          "id": "storage_manager",
+          "node_type": "storage_manager",
+          "label": "10. Storage Manager",
+          "description": "Persists runtime state and configuration data.",
+          "ports": [
+            {
+              "id": "storage_manager::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "storage_manager::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "backend": "nvs",
+            "namespace": "app"
+          },
+          "execution": {},
+          "visual": {
+            "x": 2880.0,
+            "y": 80.0,
+            "layer": 9
+          }
+        },
+        {
+          "id": "wifi",
+          "node_type": "wifi_manager",
+          "label": "11. WiFi",
+          "description": "Manages Wi-Fi connectivity and network state.",
+          "ports": [
+            {
+              "id": "wifi::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "wifi::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "mode": "station"
+          },
+          "execution": {},
+          "visual": {
+            "x": 3200.0,
+            "y": 80.0,
+            "layer": 10
+          }
+        },
+        {
+          "id": "led_gpio",
+          "node_type": "gpio_output",
+          "label": "12. LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "led_gpio::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led_gpio::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 3520.0,
+            "y": 80.0,
+            "layer": 11
+          }
+        },
+        {
+          "id": "event_handler",
+          "node_type": "event_handler",
+          "label": "13. Event Handler",
+          "description": "Queues and dispatches asynchronous firmware events.",
+          "ports": [
+            {
+              "id": "event_handler::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "event_handler::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "event_base": "ESP_EVENT_ANY_BASE",
+            "event_id": -1
+          },
+          "execution": {},
+          "visual": {
+            "x": 3840.0,
+            "y": 80.0,
+            "layer": 12
+          }
+        },
+        {
+          "id": "mqtt",
+          "node_type": "mqtt_client",
+          "label": "14. MQTT",
+          "description": "Publishes and receives MQTT messages on `esp32/sensor`.",
+          "ports": [
+            {
+              "id": "mqtt::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "mqtt::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "broker_url": "/api/command",
+            "topic": "esp32/sensor",
+            "qos": 0
+          },
+          "execution": {},
+          "visual": {
+            "x": 4160.0,
+            "y": 80.0,
+            "layer": 13
+          }
+        },
+        {
+          "id": "sensor_sim_stopping_ms",
+          "node_type": "sensor_input",
+          "label": "15. SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+          "description": "Samples sensor state from GPIO 136.",
+          "ports": [
+            {
+              "id": "sensor_sim_stopping_ms::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_sim_stopping_ms::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 136
+          },
+          "hardware": {
+            "gpio": 136,
+            "bus": "gpio",
+            "pin_label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 4480.0,
+            "y": 80.0,
+            "layer": 14
+          }
+        }
+      ],
+      "connections": [
+        [
+          "boot::out",
+          "app_task::in"
+        ],
+        [
+          "boot::out",
+          "led::in"
+        ],
+        [
+          "boot::out",
+          "sensor_200hz::in"
+        ],
+        [
+          "boot::out",
+          "sensor_200hz_1::in"
+        ],
+        [
+          "boot::out",
+          "commission::in"
+        ],
+        [
+          "boot::out",
+          "logger::in"
+        ],
+        [
+          "boot::out",
+          "_i2c::in"
+        ],
+        [
+          "boot::out",
+          "timer_node::in"
+        ],
+        [
+          "boot::out",
+          "storage_manager::in"
+        ],
+        [
+          "boot::out",
+          "wifi::in"
+        ],
+        [
+          "app_task::out",
+          "logger::in"
+        ],
+        [
+          "app_task::out",
+          "_i2c::in"
+        ],
+        [
+          "app_task::out",
+          "timer_node::in"
+        ],
+        [
+          "app_task::out",
+          "storage_manager::in"
+        ],
+        [
+          "app_task::out",
+          "wifi::in"
+        ],
+        [
+          "app_task::out",
+          "led_gpio::in"
+        ],
+        [
+          "app_task::out",
+          "event_handler::in"
+        ],
+        [
+          "app_task::out",
+          "mqtt::in"
+        ],
+        [
+          "timer_node::out",
+          "app_task::in"
+        ],
+        [
+          "timer_node::out",
+          "led::in"
+        ],
+        [
+          "timer_node::out",
+          "sensor_200hz::in"
+        ],
+        [
+          "timer_node::out",
+          "sensor_200hz_1::in"
+        ],
+        [
+          "timer_node::out",
+          "commission::in"
+        ],
+        [
+          "wifi::out",
+          "mqtt::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::out",
+          "logger::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::out",
+          "_i2c::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::out",
+          "storage_manager::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::out",
+          "event_handler::in"
+        ],
+        [
+          "sensor_sim_stopping_ms::out",
+          "mqtt::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 0.0,
+        "layer_gap": 0.0,
+        "node_gap": 0.0
+      }
+    }
+  },
+  "change_log": [],
+  "unresolved": [],
+  "read_only": false,
+  "graph_version": 22,
+  "generation": {
+    "mode": "static",
+    "triggered_by": "user_refresh",
+    "analyzed_at_ms": 1786184702282,
+    "input_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/interfaces/vibration_source.h",
+      "firmware/platforms/esp32/led_platform.c",
+      "firmware/platforms/esp32/led_platform.h",
+      "firmware/platforms/esp32/sensor_platform.c",
+      "firmware/platforms/esp32/sensor_platform.h",
+      "firmware/services/anomaly_detector.c",
+      "firmware/services/anomaly_detector.h",
+      "firmware/services/baseline_learner.c",
+      "firmware/services/baseline_learner.h",
+      "firmware/services/commissioning.c",
+      "firmware/services/commissioning.h",
+      "firmware/services/dashboard.c",
+      "firmware/services/dashboard.h",
+      "firmware/services/operating_state.c",
+      "firmware/services/operating_state.h",
+      "firmware/services/telemetry.c",
+      "firmware/services/telemetry.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ]
+  },
+  "sync_metadata": {
+    "project_file": "",
+    "content_hash": "",
+    "pending_patches": [],
+    "last_diff": {
+      "from_revision": "8d6a7953bc183bbc693553c2afd99321",
+      "to_revision": "0a16acfaf89999948d96d65dc687cb0f",
+      "nodes_added": [],
+      "nodes_removed": [],
+      "nodes_changed": [],
+      "edges_added": [],
+      "edges_removed": []
+    }
+  },
+  "validation_state": {
+    "valid": true,
+    "error_count": 0,
+    "warning_count": 1,
+    "validated_at_ms": 1786184702393
+  }
+}

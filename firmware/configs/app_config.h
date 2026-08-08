@@ -1,0 +1,37 @@
+#ifndef APP_CONFIG_H
+#define APP_CONFIG_H
+
+/* ESP32-C3-DevKitM-1 / HW-290 (GY-91) wiring. */
+#define APP_LED_GPIO                 8
+#define APP_LED_COUNT                1
+#define APP_I2C_SDA_GPIO             4
+#define APP_I2C_SCL_GPIO             5
+#define APP_I2C_FREQUENCY_HZ         400000
+#define APP_SENSOR_SIMULATION          0
+#define APP_SENSOR_LEARNING_ENABLE     1
+#define APP_SENSOR_BASELINE_REQUIRED_CYCLES 10
+#define APP_SENSOR_RAW_PERIOD_MS      5
+#define APP_SENSOR_SIM_OFF_MS       5000
+#define APP_SENSOR_SIM_STARTING_MS 10000
+#define APP_SENSOR_SIM_RUNNING_MS  20000
+#define APP_SENSOR_SIM_STOPPING_MS  5000
+#define APP_SENSOR_BASELINE_CYCLES     5
+#define APP_SENSOR_WINDOW_MS         100
+#define APP_SENSOR_TEMP_PERIOD_MS   1000
+#define APP_I2C_TIMEOUT_MS           100
+#define APP_MPU_ACCEL_SCALE_G        2.0f
+#define APP_MPU_DLPF_CFG              2
+#define APP_MPU_SAMPLE_RATE_DIV       4
+#define APP_SENSOR_EMA_ALPHA          0.25f
+#define APP_STATE_START_THRESHOLD_G   0.08f
+#define APP_STATE_STOP_THRESHOLD_G    0.05f
+#define APP_STATE_FAULT_THRESHOLD_G   0.30f
+#define APP_STATE_RECOVER_THRESHOLD_G 0.20f
+#define APP_STATE_START_SETTLE_MS   10000
+#define APP_STATE_STOP_CONFIRM_MS    2000
+#define APP_STATE_FAULT_PERSIST_MS   2000
+#define APP_STATE_CLEAR_PERSIST_MS   5000
+#define APP_LED_UPDATE_MS            20
+#define APP_LED_BRIGHTNESS           32
+
+#endif /* APP_CONFIG_H */

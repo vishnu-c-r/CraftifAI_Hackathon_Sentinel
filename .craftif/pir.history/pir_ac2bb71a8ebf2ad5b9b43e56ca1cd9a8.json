@@ -1,0 +1,521 @@
+{
+  "schema_version": "2.0.0",
+  "id": "pir_craftiai_sentinel",
+  "revision": "ac2bb71a8ebf2ad5b9b43e56ca1cd9a8",
+  "provenance": {
+    "project_path": "C:\\Users\\vishn\\Documents\\projects\\Hackathon\\my_firmware\\craftiai_sentinel",
+    "chat_id": "73dfed43-53d2-441a-8c80-9519dcdff4a9",
+    "revision": "ac2bb71a8ebf2ad5b9b43e56ca1cd9a8",
+    "generated_at_ms": 1786176761095,
+    "analyzer_version": "pir_maker-static-0.2.0",
+    "analyzed_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ],
+    "file_hashes": {
+      "firmware/app/app.h": "bc88844840b4c743283b026f851e00f0",
+      "firmware/utils/logger/logger.h": "2c284c641c88c6a4fff52db62e8d1ea5",
+      "main/entry.c": "86aaa3bc61772628c601798f4d9dea56",
+      "firmware/app/app.c": "6de318e73f38c75aa291216cc7c0b9cc",
+      "firmware/configs/platform_config.h": "010b01144dbd2d3fb63f3053b158ab7a",
+      "main/firmgen_sources.cmake": "d0d7775936bf3dd66156bb29aaadaca4",
+      "sdkconfig.defaults": "726393a4e83ff90212507c336c1b2aca",
+      "CMakeLists.txt": "80b6f4d3559efa2983b8d8ea6345a583",
+      "firmware/utils/helpers/helpers.c": "914568ab7415fec17e74f306cbb5ae09",
+      "firmware/configs/app_config.h": "61b537b868517e7fba4c00fe324b3380",
+      "firmware/configs/build_config.h": "dd997e9a0a461df28c370a61963fd7e5",
+      "firmware/utils/helpers/helpers.h": "ec8b635b7e5b55f8aeb8f47c3ff34312",
+      "main/CMakeLists.txt": "0270a2eabf62ffbebb578ae1ec286d6c",
+      "firmware/utils/logger/logger.c": "8e992fef35c9a4678ec38e60902d741d",
+      "sdkconfig": "3eb3cb817d0865b8d472844700a4224c",
+      "main/idf_component.yml": "7c3069be952336401c3d6895e32809b0"
+    }
+  },
+  "approval": {
+    "status": "stale"
+  },
+  "nodes": [
+    {
+      "id": "boot",
+      "node_type": "system_init",
+      "label": "Boot / app_main",
+      "properties": {
+        "target": "esp32c3"
+      },
+      "source_refs": [
+        {
+          "file": "main/entry.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "ac2bb71a8ebf2ad5b9b43e56ca1cd9a8"
+      },
+      "ownership": {
+        "primary_files": [
+          "main/entry.c"
+        ]
+      },
+      "editable_fields": [
+        "target"
+      ],
+      "layer": "system",
+      "ai_summary": "Bootstraps firmware startup and initializes core subsystems.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "logger",
+      "node_type": "logger",
+      "label": "Logger",
+      "properties": {
+        "tag": "APP",
+        "level": "info"
+      },
+      "source_refs": [
+        {
+          "file": "firmware/app/app.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "ac2bb71a8ebf2ad5b9b43e56ca1cd9a8"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/app/app.c"
+        ]
+      },
+      "editable_fields": [
+        "tag",
+        "level"
+      ],
+      "layer": "system",
+      "ai_summary": "Emits structured runtime logs for diagnostics.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_boot_logger",
+      "source_node_id": "boot",
+      "target_node_id": "logger",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "logger_exec_in_1",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    }
+  ],
+  "layers": {
+    "physical": [],
+    "runtime": [],
+    "network": [],
+    "system": [
+      "boot",
+      "logger"
+    ]
+  },
+  "partitions": [],
+  "components": [
+    {
+      "id": "main",
+      "path": "main/CMakeLists.txt",
+      "requires": [
+        "esp_driver_gpio",
+        "esp_timer",
+        "esp_wifi",
+        "esp_event",
+        "nvs_flash",
+        "freertos",
+        "log"
+      ],
+      "source_files": []
+    }
+  ],
+  "summary": {
+    "headline": "Refreshed required sequence diagram; no additional peripherals/tasks evidenced beyond boot -> app_start -> logger.",
+    "node_count": 0,
+    "edge_count": 0,
+    "warnings": []
+  },
+  "diagrams": {
+    "hld": {
+      "title": "Firmware high-level architecture (evidence-limited)",
+      "mermaid": "graph TD\n    hld_esp32[\"ESP32 Main Controller\"]\n    hld_logger[\"Logger\"]\n    hld_esp32 -->|Firmware Logic| hld_logger"
+    },
+    "lld": {
+      "title": "Startup flow (evidence-limited)",
+      "mermaid": "flowchart TD\n  logger[\"Logger\"]"
+    },
+    "sequence": {
+      "title": "Boot and application start sequence",
+      "mermaid": "sequenceDiagram\n    participant boot as 1. Boot / app_main\n    participant logger as 2. Logger\n    boot->>logger: initializes",
+      "participants": [
+        "boot",
+        "logger"
+      ],
+      "generated_from": [
+        "main/entry.c",
+        "firmware/app/app.c"
+      ]
+    },
+    "hld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-hld",
+      "name": "craftiai_sentinel topology — HLD",
+      "description": "High-level architecture — MCU controller, firmware modules, and integrations",
+      "nodes": [
+        {
+          "id": "hld_esp32",
+          "node_type": "system_init",
+          "label": "ESP32 Main Controller",
+          "description": "Main firmware control node coordinating peripherals, storage, and connectivity.",
+          "ports": [
+            {
+              "id": "hld_esp32::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_esp32::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "controller"
+          },
+          "visual": {
+            "x": 0.0,
+            "y": -100.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_logger",
+          "node_type": "logger",
+          "label": "Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "hld_logger::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_logger::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info",
+            "hld_role": "runtime",
+            "source_node_id": "logger"
+          },
+          "execution": {},
+          "visual": {
+            "x": 430.0,
+            "y": -100.0,
+            "layer": 1
+          }
+        }
+      ],
+      "connections": [
+        [
+          "hld_esp32::hld::out",
+          "hld_logger::hld::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 280.0,
+        "layer_gap": 150.0,
+        "node_gap": 64.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "diagram_view": "hld",
+          "hld_projection": "architecture",
+          "hld_edge_labels": {
+            "hld_esp32::hld::out|hld_logger::hld::in": "Firmware Logic"
+          }
+        }
+      }
+    },
+    "lld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-lld",
+      "name": "craftiai_sentinel topology — LLD",
+      "description": "Low-level design — FreeRTOS and peripheral/service workflow",
+      "nodes": [
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info",
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "logger"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": -140.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        }
+      ],
+      "connections": [],
+      "layout": {
+        "orientation": "vertical",
+        "node_width": 280.0,
+        "layer_gap": 120.0,
+        "node_gap": 48.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "diagram_view": "ldd",
+          "ldd_edge_labels": {}
+        }
+      }
+    },
+    "sequence_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-sequence",
+      "name": "craftiai_sentinel topology — Sequence",
+      "description": "Execution and initialization order",
+      "nodes": [
+        {
+          "id": "boot",
+          "node_type": "system_init",
+          "label": "1. Boot / app_main",
+          "description": "Bootstraps firmware startup and initializes core subsystems.",
+          "ports": [
+            {
+              "id": "boot::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "boot::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "target": "esp32c3"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": 80.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "2. Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info"
+          },
+          "execution": {},
+          "visual": {
+            "x": 320.0,
+            "y": 80.0,
+            "layer": 1
+          }
+        }
+      ],
+      "connections": [
+        [
+          "boot::out",
+          "logger::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 0.0,
+        "layer_gap": 0.0,
+        "node_gap": 0.0
+      }
+    }
+  },
+  "change_log": [],
+  "unresolved": [
+    {
+      "kind": "sparse_extraction",
+      "message": "app_start() behavior not evidenced in provided snippets; cannot extract GPIO/task/peripheral topology.",
+      "file": "firmware/app/app.c"
+    }
+  ],
+  "read_only": false,
+  "graph_version": 9,
+  "generation": {
+    "mode": "hybrid_refine",
+    "model": "local_openai_proxy/gpt-5.2",
+    "triggered_by": "agent_turn",
+    "analyzed_at_ms": 1786176768588,
+    "input_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ],
+    "token_usage": {
+      "prompt_tokens": 2552,
+      "completion_tokens": 434
+    }
+  },
+  "sync_metadata": {
+    "project_file": "",
+    "content_hash": "",
+    "pending_patches": [],
+    "last_diff": {
+      "from_revision": "705f74574cf213faeb5ce2bfe3b90a5e",
+      "to_revision": "ac2bb71a8ebf2ad5b9b43e56ca1cd9a8",
+      "nodes_added": [],
+      "nodes_removed": [
+        "button_gpio",
+        "led_gpio",
+        "vibration_1",
+        "vibration",
+        "_i2c",
+        "button",
+        "rainbow"
+      ],
+      "nodes_changed": [
+        "boot"
+      ],
+      "edges_added": [],
+      "edges_removed": [
+        "e_rainbow_vibration_trigger_in",
+        "e_rainbow_button_trigger_in",
+        "e_rainbow_button_gpio_exec_in",
+        "e_boot_vibration_1",
+        "e_boot_rainbow",
+        "e_button_logger_control",
+        "boot_exec_in_0__button_exec_in_0",
+        "e_rainbow__i2c_data_in",
+        "e_rainbow_led_gpio_exec_in",
+        "e_boot__i2c",
+        "e_button_rainbow_trigger_in",
+        "e_rainbow_logger_data_in",
+        "e_button__i2c_control",
+        "boot_exec_in_1__rainbow_exec_in_0",
+        "button_exec_in_0__button_gpio_gpio_in_0",
+        "e_rainbow_vibration_1_trigger_in",
+        "e_boot_button",
+        "e_boot_vibration"
+      ]
+    }
+  },
+  "validation_state": {
+    "valid": true,
+    "error_count": 0,
+    "warning_count": 0,
+    "validated_at_ms": 1786176768627
+  }
+}

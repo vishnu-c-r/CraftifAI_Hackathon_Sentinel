@@ -1,0 +1,1319 @@
+{
+  "schema_version": "2.0.0",
+  "id": "pir_craftiai_sentinel",
+  "revision": "a8e619d01642c5b98369142144add498",
+  "provenance": {
+    "project_path": "C:\\Users\\vishn\\Documents\\projects\\Hackathon\\my_firmware\\craftiai_sentinel",
+    "chat_id": "73dfed43-53d2-441a-8c80-9519dcdff4a9",
+    "revision": "a8e619d01642c5b98369142144add498",
+    "generated_at_ms": 1786177258456,
+    "analyzer_version": "pir_maker-static-0.2.0",
+    "analyzed_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/interfaces/vibration_source.h",
+      "firmware/platforms/esp32/led_platform.c",
+      "firmware/platforms/esp32/led_platform.h",
+      "firmware/platforms/esp32/sensor_platform.c",
+      "firmware/platforms/esp32/sensor_platform.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ],
+    "file_hashes": {
+      "firmware/platforms/esp32/sensor_platform.h": "bffd31c6fc633e3d2bf0154e5ebb7ab9",
+      "main/CMakeLists.txt": "53b075b3b0e10d5b2e40069395db10ce",
+      "sdkconfig": "87e0a65e0f1610bf27ce94afcb07070d",
+      "CMakeLists.txt": "80b6f4d3559efa2983b8d8ea6345a583",
+      "main/idf_component.yml": "7c3069be952336401c3d6895e32809b0",
+      "firmware/configs/platform_config.h": "010b01144dbd2d3fb63f3053b158ab7a",
+      "firmware/utils/logger/logger.h": "2c284c641c88c6a4fff52db62e8d1ea5",
+      "firmware/configs/app_config.h": "e4bc6fb997057ff141adeadc5978fb72",
+      "firmware/utils/logger/logger.c": "8e992fef35c9a4678ec38e60902d741d",
+      "firmware/utils/helpers/helpers.c": "914568ab7415fec17e74f306cbb5ae09",
+      "firmware/utils/helpers/helpers.h": "ec8b635b7e5b55f8aeb8f47c3ff34312",
+      "firmware/platforms/esp32/led_platform.c": "89dd119cf881be054cd89e613987845a",
+      "firmware/interfaces/vibration_source.h": "e91adc5e2b3694e74c9d655d92076383",
+      "sdkconfig.defaults": "726393a4e83ff90212507c336c1b2aca",
+      "firmware/app/app.h": "bc88844840b4c743283b026f851e00f0",
+      "main/entry.c": "86aaa3bc61772628c601798f4d9dea56",
+      "firmware/platforms/esp32/led_platform.h": "93580e1829ba98c28a062f628362e99c",
+      "firmware/platforms/esp32/sensor_platform.c": "d02566bee8ea3cfa7c2cfc4d358ab0a0",
+      "main/firmgen_sources.cmake": "d2118fdc0f33d125421cba3453659fae",
+      "firmware/app/app.c": "068068c39269061610d7b8b18f579396",
+      "firmware/configs/build_config.h": "dd997e9a0a461df28c370a61963fd7e5"
+    }
+  },
+  "approval": {
+    "status": "stale"
+  },
+  "nodes": [
+    {
+      "id": "boot",
+      "node_type": "system_init",
+      "label": "Boot / app_main",
+      "properties": {
+        "target": "esp32c3"
+      },
+      "source_refs": [
+        {
+          "file": "main/entry.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "main/entry.c"
+        ]
+      },
+      "editable_fields": [
+        "target"
+      ],
+      "layer": "system",
+      "ai_summary": "Bootstraps firmware startup and initializes core subsystems.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "led_gpio",
+      "node_type": "gpio_output",
+      "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+      "properties": {
+        "pin": 8
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "pin"
+      ],
+      "layer": "physical",
+      "ai_summary": "Drives GPIO 8 as an output signal.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "led",
+      "node_type": "rtos_task",
+      "label": "Task led",
+      "properties": {
+        "task_name": "led",
+        "priority": 5,
+        "stack_size": 2048,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/led_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/led_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for led.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "sensor_50hz",
+      "node_type": "rtos_task",
+      "label": "Task sensor_50hz",
+      "properties": {
+        "task_name": "sensor_50hz",
+        "priority": 5,
+        "stack_size": 4096,
+        "period_ms": 0.0
+      },
+      "source_refs": [
+        {
+          "file": "firmware/platforms/esp32/sensor_platform.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/platforms/esp32/sensor_platform.c"
+        ]
+      },
+      "editable_fields": [
+        "task_name",
+        "priority",
+        "stack_size",
+        "period_ms"
+      ],
+      "layer": "runtime",
+      "ai_summary": "Executes RTOS loop logic for sensor_50hz.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "logger",
+      "node_type": "logger",
+      "label": "Logger",
+      "properties": {
+        "tag": "APP",
+        "level": "info"
+      },
+      "source_refs": [
+        {
+          "file": "firmware/app/app.c",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/app/app.c"
+        ]
+      },
+      "editable_fields": [
+        "tag",
+        "level"
+      ],
+      "layer": "system",
+      "ai_summary": "Emits structured runtime logs for diagnostics.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    },
+    {
+      "id": "_i2c",
+      "node_type": "i2c_device",
+      "label": "APP I2C Device",
+      "properties": {
+        "sda_pin": 4,
+        "scl_pin": 5,
+        "address": "0x68",
+        "clock_hz": 100000,
+        "pin_bindings": {
+          "sda": 4,
+          "scl": 5
+        }
+      },
+      "source_refs": [
+        {
+          "file": "firmware/configs/app_config.h",
+          "confidence": 1.0,
+          "inferred_by": "static"
+        }
+      ],
+      "sync": {
+        "state": "synced",
+        "last_synced_revision": "a8e619d01642c5b98369142144add498"
+      },
+      "ownership": {
+        "primary_files": [
+          "firmware/configs/app_config.h"
+        ]
+      },
+      "editable_fields": [
+        "sda_pin",
+        "scl_pin",
+        "address",
+        "clock_hz"
+      ],
+      "layer": "physical",
+      "ai_summary": "Represents an I2C peripheral with mapped bus pins.",
+      "confidence": 1.0,
+      "authority": "agent",
+      "semantic_tags": [],
+      "dependencies": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_boot_led",
+      "source_node_id": "boot",
+      "target_node_id": "led",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "led_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_sensor_50hz",
+      "source_node_id": "boot",
+      "target_node_id": "sensor_50hz",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "sensor_50hz_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "spawns",
+      "validated": false
+    },
+    {
+      "id": "e_boot_logger",
+      "source_node_id": "boot",
+      "target_node_id": "logger",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "logger_exec_in_1",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_boot__i2c",
+      "source_node_id": "boot",
+      "target_node_id": "_i2c",
+      "source_port_id": "boot_boot_out_0",
+      "target_port_id": "_i2c_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.9,
+      "source_refs": [],
+      "semantic_label": "initializes",
+      "validated": false
+    },
+    {
+      "id": "e_led_led_gpio_exec_in",
+      "source_node_id": "led",
+      "target_node_id": "led_gpio",
+      "source_port_id": "led_exec_out_2",
+      "target_port_id": "led_gpio_exec_in_0",
+      "kind": "execution",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "controls",
+      "validated": false
+    },
+    {
+      "id": "e_sensor_50hz_led_trigger_in",
+      "source_node_id": "sensor_50hz",
+      "target_node_id": "led",
+      "source_port_id": "sensor_50hz_data_out_3",
+      "target_port_id": "led_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_led_sensor_50hz_trigger_in",
+      "source_node_id": "led",
+      "target_node_id": "sensor_50hz",
+      "source_port_id": "led_data_out_3",
+      "target_port_id": "sensor_50hz_trigger_in_1",
+      "kind": "event",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "triggers",
+      "validated": false
+    },
+    {
+      "id": "e_led_logger_data_in",
+      "source_node_id": "led",
+      "target_node_id": "logger",
+      "source_port_id": "led_data_out_3",
+      "target_port_id": "logger_data_in_0",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    },
+    {
+      "id": "e_led__i2c_data_in",
+      "source_node_id": "led",
+      "target_node_id": "_i2c",
+      "source_port_id": "led_data_out_3",
+      "target_port_id": "_i2c_data_in_1",
+      "kind": "data",
+      "confidence": 0.78,
+      "source_refs": [],
+      "semantic_label": "data_flow",
+      "validated": false
+    }
+  ],
+  "layers": {
+    "physical": [
+      "led_gpio",
+      "_i2c"
+    ],
+    "runtime": [
+      "led",
+      "sensor_50hz"
+    ],
+    "network": [],
+    "system": [
+      "boot",
+      "logger"
+    ]
+  },
+  "partitions": [],
+  "components": [
+    {
+      "id": "main",
+      "path": "main/CMakeLists.txt",
+      "requires": [
+        "esp_driver_gpio",
+        "esp_driver_i2c",
+        "esp_timer",
+        "esp_wifi",
+        "esp_event",
+        "nvs_flash",
+        "freertos",
+        "log",
+        "espressif__led_strip"
+      ],
+      "source_files": []
+    }
+  ],
+  "summary": {
+    "headline": "6 nodes, 9 connections — valid",
+    "node_count": 6,
+    "edge_count": 9,
+    "warnings": [
+      "Cyclic execution path detected involving: boot -> led -> sensor_50hz -> led"
+    ]
+  },
+  "diagrams": {
+    "hld": {
+      "title": "High-Level Design",
+      "mermaid": "graph TD\n    hld_esp32[\"ESP32 Main Controller\"]\n    hld_led_gpio[\"LED GPIO (GPIO 8, APP_LED_GPIO)\"]\n    hld__i2c[\"APP I2C Device\"]\n    hld_led[\"Task led\"]\n    hld_sensor_50hz[\"Task sensor_50hz\"]\n    hld_esp32 -->|Control Signals| hld_led_gpio\n    hld_esp32 -->|Peripheral I/O| hld__i2c\n    hld_esp32 -->|Firmware Logic| hld_led\n    hld_esp32 -->|Firmware Logic| hld_sensor_50hz\n    hld_led -->|Data Flow| hld__i2c\n    hld_led -->|Control LED GPIO (GPIO 8, APP_LED_GPIO)| hld_led_gpio\n    hld_led -->|Forward Sensor Event| hld_sensor_50hz\n    hld_sensor_50hz -->|Forward Sensor Event| hld_led"
+    },
+    "lld": {
+      "title": "Low-Level Design (Firmware Workflow)",
+      "mermaid": "flowchart TD\n  subgraph freertos_runtime[\"FreeRTOS\"]\n    led[\"Task led\"]\n    sensor_50hz[\"Task sensor_50hz\"]\n  end\n  led_gpio[\"LED GPIO (GPIO 8, APP_LED_GPIO)\"]\n  _i2c[\"APP I2C Device\"]\n  logger[\"Logger\"]\n  led --> _i2c\n  led --> led_gpio\n  led --> logger\n  led --> sensor_50hz\n  sensor_50hz --> led"
+    },
+    "sequence": {
+      "title": "Sequence Diagram",
+      "mermaid": "sequenceDiagram\n    participant boot as 1. Boot / app_main\n    participant led as 2. Task led\n    participant sensor_50hz as 3. Task sensor_50hz\n    participant logger as 4. Logger\n    participant _i2c as 5. APP I2C Device\n    participant led_gpio as 6. LED GPIO (GPIO 8, APP_LED_GPIO)\n    boot->>led: spawns\n    boot->>sensor_50hz: spawns\n    boot->>logger: initializes\n    boot->>_i2c: initializes\n    led->>sensor_50hz: triggers\n    led->>logger: data_flow\n    led->>_i2c: data_flow\n    led->>led_gpio: controls\n    sensor_50hz->>led: triggers",
+      "participants": [
+        "boot",
+        "led",
+        "sensor_50hz",
+        "logger",
+        "_i2c",
+        "led_gpio"
+      ],
+      "generated_from": [
+        "main/entry.c",
+        "firmware/configs/app_config.h",
+        "firmware/platforms/esp32/led_platform.c",
+        "firmware/platforms/esp32/sensor_platform.c",
+        "firmware/app/app.c"
+      ]
+    },
+    "hld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-hld",
+      "name": "craftiai_sentinel topology — HLD",
+      "description": "High-level architecture — MCU controller, firmware modules, and integrations",
+      "nodes": [
+        {
+          "id": "hld_esp32",
+          "node_type": "system_init",
+          "label": "ESP32 Main Controller",
+          "description": "Main firmware control node coordinating peripherals, storage, and connectivity.",
+          "ports": [
+            {
+              "id": "hld_esp32::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_esp32::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "hld_role": "controller"
+          },
+          "visual": {
+            "x": 0.0,
+            "y": -628.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_led_gpio",
+          "node_type": "gpio_output",
+          "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "hld_led_gpio::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_led_gpio::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8,
+            "hld_role": "peripheral",
+            "source_node_id": "led_gpio"
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": -364.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld__i2c",
+          "node_type": "i2c_device",
+          "label": "APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "hld__i2c::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld__i2c::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            },
+            "hld_role": "peripheral",
+            "source_node_id": "_i2c"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": -100.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_led",
+          "node_type": "rtos_task",
+          "label": "Task led",
+          "description": "Executes RTOS loop logic for led.",
+          "ports": [
+            {
+              "id": "hld_led::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_led::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "led",
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0,
+            "hld_role": "runtime",
+            "source_node_id": "led"
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 0.0,
+            "y": 164.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "hld_sensor_50hz",
+          "node_type": "rtos_task",
+          "label": "Task sensor_50hz",
+          "description": "Executes RTOS loop logic for sensor_50hz.",
+          "ports": [
+            {
+              "id": "hld_sensor_50hz::hld::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "hld_sensor_50hz::hld::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_50hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0,
+            "hld_role": "runtime",
+            "source_node_id": "sensor_50hz"
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 0.0,
+            "y": 428.0,
+            "layer": 0
+          }
+        }
+      ],
+      "connections": [
+        [
+          "hld_esp32::hld::out",
+          "hld_led_gpio::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld__i2c::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_led::hld::in"
+        ],
+        [
+          "hld_esp32::hld::out",
+          "hld_sensor_50hz::hld::in"
+        ],
+        [
+          "hld_led::hld::out",
+          "hld__i2c::hld::in"
+        ],
+        [
+          "hld_led::hld::out",
+          "hld_led_gpio::hld::in"
+        ],
+        [
+          "hld_led::hld::out",
+          "hld_sensor_50hz::hld::in"
+        ],
+        [
+          "hld_sensor_50hz::hld::out",
+          "hld_led::hld::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 280.0,
+        "layer_gap": 150.0,
+        "node_gap": 64.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "hld_projection": "architecture",
+          "hld_edge_labels": {
+            "hld_esp32::hld::out|hld_led_gpio::hld::in": "Control Signals",
+            "hld_esp32::hld::out|hld__i2c::hld::in": "Peripheral I/O",
+            "hld_esp32::hld::out|hld_led::hld::in": "Firmware Logic",
+            "hld_esp32::hld::out|hld_sensor_50hz::hld::in": "Firmware Logic",
+            "hld_led::hld::out|hld__i2c::hld::in": "Data Flow",
+            "hld_led::hld::out|hld_led_gpio::hld::in": "Control LED GPIO (GPIO 8, APP_LED_GPIO)",
+            "hld_led::hld::out|hld_sensor_50hz::hld::in": "Forward Sensor Event",
+            "hld_sensor_50hz::hld::out|hld_led::hld::in": "Forward Sensor Event"
+          },
+          "diagram_view": "hld"
+        }
+      }
+    },
+    "lld_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-lld",
+      "name": "craftiai_sentinel topology — LLD",
+      "description": "Low-level design — FreeRTOS and peripheral/service workflow",
+      "nodes": [
+        {
+          "id": "led",
+          "node_type": "rtos_task",
+          "label": "Task led",
+          "description": "Executes RTOS loop logic for led.",
+          "ports": [
+            {
+              "id": "led::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "led",
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": -560.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "sensor_50hz",
+          "node_type": "rtos_task",
+          "label": "Task sensor_50hz",
+          "description": "Executes RTOS loop logic for sensor_50hz.",
+          "ports": [
+            {
+              "id": "sensor_50hz::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_50hz::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_50hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0,
+            "lld_workflow": {
+              "role": "freertos",
+              "node_type": "rtos_task"
+            }
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": -232.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "led_gpio",
+          "node_type": "gpio_output",
+          "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "led_gpio::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led_gpio::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8,
+            "lld_workflow": {
+              "role": "peripheral",
+              "node_type": "gpio_output"
+            }
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 96.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "_i2c",
+          "node_type": "i2c_device",
+          "label": "APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "_i2c::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "_i2c::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            },
+            "lld_workflow": {
+              "role": "peripheral",
+              "node_type": "i2c_device"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 424.0,
+            "y": 0.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::ldd::in",
+              "name": "assoc_in",
+              "direction": "input",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::ldd::out",
+              "name": "assoc_out",
+              "direction": "output",
+              "datatype": "association",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info",
+            "lld_workflow": {
+              "role": "service",
+              "node_type": "logger"
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": -140.0,
+            "y": 320.0,
+            "layer": 1
+          }
+        }
+      ],
+      "connections": [
+        [
+          "led::ldd::out",
+          "led_gpio::ldd::in"
+        ],
+        [
+          "sensor_50hz::ldd::out",
+          "led::ldd::in"
+        ],
+        [
+          "led::ldd::out",
+          "sensor_50hz::ldd::in"
+        ],
+        [
+          "led::ldd::out",
+          "logger::ldd::in"
+        ],
+        [
+          "led::ldd::out",
+          "_i2c::ldd::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "vertical",
+        "node_width": 280.0,
+        "layer_gap": 120.0,
+        "node_gap": 48.0
+      },
+      "runtime_metadata": {
+        "telemetry_enabled": false,
+        "overlays": {
+          "ldd_edge_labels": {
+            "led::ldd::out|logger::ldd::in": "data_flow",
+            "led::ldd::out|led_gpio::ldd::in": "controls",
+            "led::ldd::out|sensor_50hz::ldd::in": "triggers",
+            "led::ldd::out|_i2c::ldd::in": "data_flow",
+            "sensor_50hz::ldd::out|led::ldd::in": "triggers"
+          },
+          "diagram_view": "ldd"
+        }
+      }
+    },
+    "sequence_graph": {
+      "schema_version": 1,
+      "id": "pir_craftiai_sentinel-sequence",
+      "name": "craftiai_sentinel topology — Sequence",
+      "description": "Execution and initialization order",
+      "nodes": [
+        {
+          "id": "boot",
+          "node_type": "system_init",
+          "label": "1. Boot / app_main",
+          "description": "Bootstraps firmware startup and initializes core subsystems.",
+          "ports": [
+            {
+              "id": "boot::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "boot::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "target": "esp32c3"
+          },
+          "execution": {},
+          "visual": {
+            "x": 0.0,
+            "y": 80.0,
+            "layer": 0
+          }
+        },
+        {
+          "id": "led",
+          "node_type": "rtos_task",
+          "label": "2. Task led",
+          "description": "Executes RTOS loop logic for led.",
+          "ports": [
+            {
+              "id": "led::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "led",
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 2048,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 320.0,
+            "y": 80.0,
+            "layer": 1
+          }
+        },
+        {
+          "id": "sensor_50hz",
+          "node_type": "rtos_task",
+          "label": "3. Task sensor_50hz",
+          "description": "Executes RTOS loop logic for sensor_50hz.",
+          "ports": [
+            {
+              "id": "sensor_50hz::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "sensor_50hz::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "task_name": "sensor_50hz",
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "execution": {
+            "priority": 5,
+            "stack_size": 4096,
+            "period_ms": 0.0
+          },
+          "visual": {
+            "x": 640.0,
+            "y": 80.0,
+            "layer": 2
+          }
+        },
+        {
+          "id": "logger",
+          "node_type": "logger",
+          "label": "4. Logger",
+          "description": "Emits structured runtime logs for diagnostics.",
+          "ports": [
+            {
+              "id": "logger::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "logger::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "tag": "APP",
+            "level": "info"
+          },
+          "execution": {},
+          "visual": {
+            "x": 960.0,
+            "y": 80.0,
+            "layer": 3
+          }
+        },
+        {
+          "id": "_i2c",
+          "node_type": "i2c_device",
+          "label": "5. APP I2C Device",
+          "description": "Represents an I2C peripheral with mapped bus pins.",
+          "ports": [
+            {
+              "id": "_i2c::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "_i2c::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "sda_pin": 4,
+            "scl_pin": 5,
+            "address": "0x68",
+            "clock_hz": 100000,
+            "pin_bindings": {
+              "sda": 4,
+              "scl": 5
+            }
+          },
+          "execution": {},
+          "visual": {
+            "x": 1280.0,
+            "y": 80.0,
+            "layer": 4
+          }
+        },
+        {
+          "id": "led_gpio",
+          "node_type": "gpio_output",
+          "label": "6. LED GPIO (GPIO 8, APP_LED_GPIO)",
+          "description": "Drives GPIO 8 as an output signal.",
+          "ports": [
+            {
+              "id": "led_gpio::in",
+              "name": "in",
+              "direction": "input",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            },
+            {
+              "id": "led_gpio::out",
+              "name": "out",
+              "direction": "output",
+              "datatype": "any",
+              "required": false,
+              "multiplicity": "one"
+            }
+          ],
+          "properties": {
+            "pin": 8
+          },
+          "hardware": {
+            "gpio": 8,
+            "bus": "gpio",
+            "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+          },
+          "execution": {},
+          "visual": {
+            "x": 1600.0,
+            "y": 80.0,
+            "layer": 5
+          }
+        }
+      ],
+      "connections": [
+        [
+          "boot::out",
+          "led::in"
+        ],
+        [
+          "boot::out",
+          "sensor_50hz::in"
+        ],
+        [
+          "boot::out",
+          "logger::in"
+        ],
+        [
+          "boot::out",
+          "_i2c::in"
+        ],
+        [
+          "led::out",
+          "sensor_50hz::in"
+        ],
+        [
+          "led::out",
+          "logger::in"
+        ],
+        [
+          "led::out",
+          "_i2c::in"
+        ],
+        [
+          "led::out",
+          "led_gpio::in"
+        ],
+        [
+          "sensor_50hz::out",
+          "led::in"
+        ]
+      ],
+      "layout": {
+        "orientation": "horizontal",
+        "node_width": 0.0,
+        "layer_gap": 0.0,
+        "node_gap": 0.0
+      }
+    }
+  },
+  "change_log": [],
+  "unresolved": [],
+  "read_only": false,
+  "graph_version": 12,
+  "generation": {
+    "mode": "static",
+    "triggered_by": "user_refresh",
+    "analyzed_at_ms": 1786177258473,
+    "input_files": [
+      "CMakeLists.txt",
+      "firmware/app/app.c",
+      "firmware/app/app.h",
+      "firmware/configs/app_config.h",
+      "firmware/configs/build_config.h",
+      "firmware/configs/platform_config.h",
+      "firmware/interfaces/vibration_source.h",
+      "firmware/platforms/esp32/led_platform.c",
+      "firmware/platforms/esp32/led_platform.h",
+      "firmware/platforms/esp32/sensor_platform.c",
+      "firmware/platforms/esp32/sensor_platform.h",
+      "firmware/utils/helpers/helpers.c",
+      "firmware/utils/helpers/helpers.h",
+      "firmware/utils/logger/logger.c",
+      "firmware/utils/logger/logger.h",
+      "main/CMakeLists.txt",
+      "main/entry.c",
+      "main/firmgen_sources.cmake",
+      "main/idf_component.yml",
+      "sdkconfig",
+      "sdkconfig.defaults"
+    ]
+  },
+  "sync_metadata": {
+    "project_file": "",
+    "content_hash": "",
+    "pending_patches": [],
+    "last_diff": {
+      "from_revision": "b2133d1906ecfcb0ab1f8768078a220c",
+      "to_revision": "a8e619d01642c5b98369142144add498",
+      "nodes_added": [],
+      "nodes_removed": [],
+      "nodes_changed": [],
+      "edges_added": [],
+      "edges_removed": []
+    }
+  },
+  "validation_state": {
+    "valid": true,
+    "error_count": 0,
+    "warning_count": 1,
+    "validated_at_ms": 1786177258555
+  }
+}

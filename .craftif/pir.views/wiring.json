@@ -1,0 +1,804 @@
+{
+  "schema_version": "1.0.0",
+  "view": "wiring",
+  "revision": "0a16acfaf89999948d96d65dc687cb0f",
+  "graph_version": 22,
+  "generated_at_ms": 1786184702445,
+  "graph": {
+    "schema_version": 1,
+    "id": "pir_craftiai_sentinel",
+    "name": "craftiai_sentinel topology",
+    "description": "15 nodes, 30 connections — valid",
+    "nodes": [
+      {
+        "id": "boot",
+        "node_type": "system_init",
+        "label": "Boot / app_main",
+        "description": "Bootstraps firmware startup and initializes core subsystems.",
+        "ports": [
+          {
+            "id": "boot_boot_out_0",
+            "name": "boot_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": true,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "target": "esp32c3"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": -500.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "led_gpio",
+        "node_type": "gpio_output",
+        "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+        "description": "Drives GPIO 8 as an output signal.",
+        "ports": [
+          {
+            "id": "led_gpio_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": true,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led_gpio_gpio_in_1",
+            "name": "gpio_in",
+            "direction": "input",
+            "datatype": "gpio_level",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "pin": 8
+        },
+        "hardware": {
+          "gpio": 8,
+          "bus": "gpio",
+          "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": -300.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "sensor_sim_stopping_ms",
+        "node_type": "sensor_input",
+        "label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+        "description": "Samples sensor state from GPIO 136.",
+        "ports": [
+          {
+            "id": "sensor_sim_stopping_ms_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_sim_stopping_ms_data_out_1",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "pin": 136
+        },
+        "hardware": {
+          "gpio": 136,
+          "bus": "gpio",
+          "pin_label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": -100.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "app_task",
+        "node_type": "rtos_task",
+        "label": "Task app_task",
+        "description": "Executes RTOS loop logic for app_task.",
+        "ports": [
+          {
+            "id": "app_task_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "app_task_trigger_in_1",
+            "name": "trigger_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "app_task_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "app_task_data_out_3",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "app_task",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 5.0
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 5.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": 100.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "led",
+        "node_type": "rtos_task",
+        "label": "Task led",
+        "description": "Executes RTOS loop logic for led.",
+        "ports": [
+          {
+            "id": "led_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led_trigger_in_1",
+            "name": "trigger_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led_data_out_3",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "led",
+          "priority": 5,
+          "stack_size": 2048,
+          "period_ms": 0.0
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 2048,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": 300.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "sensor_200hz",
+        "node_type": "rtos_task",
+        "label": "Task sensor_200hz",
+        "description": "Executes RTOS loop logic for sensor_200hz.",
+        "ports": [
+          {
+            "id": "sensor_200hz_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_trigger_in_1",
+            "name": "trigger_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_data_out_3",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "sensor_200hz",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": -400.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "sensor_200hz_1",
+        "node_type": "rtos_task",
+        "label": "Task sensor_200hz",
+        "description": "Executes RTOS loop logic for sensor_200hz.",
+        "ports": [
+          {
+            "id": "sensor_200hz_1_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_1_trigger_in_1",
+            "name": "trigger_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_1_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_1_data_out_3",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "sensor_200hz",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": -200.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "commission",
+        "node_type": "rtos_task",
+        "label": "Task commission",
+        "description": "Executes RTOS loop logic for commission.",
+        "ports": [
+          {
+            "id": "commission_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "commission_trigger_in_1",
+            "name": "trigger_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "commission_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "commission_data_out_3",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "commission",
+          "priority": 5,
+          "stack_size": 3072,
+          "period_ms": 0.0
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 3072,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": 0.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "logger",
+        "node_type": "logger",
+        "label": "Logger",
+        "description": "Emits structured runtime logs for diagnostics.",
+        "ports": [
+          {
+            "id": "logger_data_in_0",
+            "name": "data_in",
+            "direction": "input",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "logger_exec_in_1",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "tag": "APP",
+          "level": "info"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": 200.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "_i2c",
+        "node_type": "i2c_device",
+        "label": "APP I2C Device",
+        "description": "Represents an I2C peripheral with mapped bus pins.",
+        "ports": [
+          {
+            "id": "_i2c_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "_i2c_data_in_1",
+            "name": "data_in",
+            "direction": "input",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "_i2c_data_out_2",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "sda_pin": 4,
+          "scl_pin": 5,
+          "address": "0x68",
+          "clock_hz": 100000,
+          "pin_bindings": {
+            "sda": 4,
+            "scl": 5
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": -400.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "timer_node",
+        "node_type": "timer_node",
+        "label": "Timer",
+        "description": "Schedules periodic callbacks for time-based workflow.",
+        "ports": [
+          {
+            "id": "timer_node_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "timer_node_event_out_1",
+            "name": "event_out",
+            "direction": "output",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "timer_name": "periodic_timer",
+          "period_ms": 1000.0,
+          "auto_reload": true
+        },
+        "execution": {
+          "period_ms": 1000.0
+        },
+        "visual": {
+          "x": 0.0,
+          "y": -200.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "storage_manager",
+        "node_type": "storage_manager",
+        "label": "Storage Manager",
+        "description": "Persists runtime state and configuration data.",
+        "ports": [
+          {
+            "id": "storage_manager_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "storage_manager_data_in_1",
+            "name": "data_in",
+            "direction": "input",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "storage_manager_data_out_2",
+            "name": "data_out",
+            "direction": "output",
+            "datatype": "signal",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "backend": "nvs",
+          "namespace": "app"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": 0.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "wifi",
+        "node_type": "wifi_manager",
+        "label": "WiFi",
+        "description": "Manages Wi-Fi connectivity and network state.",
+        "ports": [
+          {
+            "id": "wifi_exec_in_0",
+            "name": "exec_in",
+            "direction": "input",
+            "datatype": "execution",
+            "required": true,
+            "multiplicity": "one"
+          },
+          {
+            "id": "wifi_network_out_1",
+            "name": "network_out",
+            "direction": "output",
+            "datatype": "network",
+            "required": true,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "mode": "station"
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": 200.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "event_handler",
+        "node_type": "event_handler",
+        "label": "Event Handler",
+        "description": "Queues and dispatches asynchronous firmware events.",
+        "ports": [
+          {
+            "id": "event_handler_event_in_0",
+            "name": "event_in",
+            "direction": "input",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "event_handler_event_out_1",
+            "name": "event_out",
+            "direction": "output",
+            "datatype": "event",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "event_handler_exec_out_2",
+            "name": "exec_out",
+            "direction": "output",
+            "datatype": "execution",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "event_base": "ESP_EVENT_ANY_BASE",
+          "event_id": -1
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": -200.0,
+          "layer": 3
+        }
+      },
+      {
+        "id": "mqtt",
+        "node_type": "mqtt_client",
+        "label": "MQTT",
+        "description": "Publishes and receives MQTT messages on `esp32/sensor`.",
+        "ports": [
+          {
+            "id": "mqtt_network_in_0",
+            "name": "network_in",
+            "direction": "input",
+            "datatype": "network",
+            "required": true,
+            "multiplicity": "one"
+          },
+          {
+            "id": "mqtt_data_in_1",
+            "name": "data_in",
+            "direction": "input",
+            "datatype": "payload",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "mqtt_publish_out_2",
+            "name": "publish_out",
+            "direction": "output",
+            "datatype": "mqtt_message",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "broker_url": "/api/command",
+          "topic": "esp32/sensor",
+          "qos": 0
+        },
+        "execution": {},
+        "visual": {
+          "x": 0.0,
+          "y": 0.0,
+          "layer": 3
+        }
+      }
+    ],
+    "connections": [
+      [
+        "boot_boot_out_0",
+        "app_task_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "led_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "sensor_200hz_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "sensor_200hz_1_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "commission_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "logger_exec_in_1"
+      ],
+      [
+        "boot_boot_out_0",
+        "_i2c_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "timer_node_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "storage_manager_exec_in_0"
+      ],
+      [
+        "boot_boot_out_0",
+        "wifi_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "led_gpio_exec_in_0"
+      ],
+      [
+        "timer_node_event_out_1",
+        "app_task_trigger_in_1"
+      ],
+      [
+        "timer_node_event_out_1",
+        "led_trigger_in_1"
+      ],
+      [
+        "timer_node_event_out_1",
+        "sensor_200hz_trigger_in_1"
+      ],
+      [
+        "timer_node_event_out_1",
+        "sensor_200hz_1_trigger_in_1"
+      ],
+      [
+        "timer_node_event_out_1",
+        "commission_trigger_in_1"
+      ],
+      [
+        "sensor_sim_stopping_ms_data_out_1",
+        "logger_data_in_0"
+      ],
+      [
+        "sensor_sim_stopping_ms_data_out_1",
+        "_i2c_data_in_1"
+      ],
+      [
+        "sensor_sim_stopping_ms_data_out_1",
+        "storage_manager_data_in_1"
+      ],
+      [
+        "sensor_sim_stopping_ms_data_out_1",
+        "event_handler_event_in_0"
+      ],
+      [
+        "wifi_network_out_1",
+        "mqtt_network_in_0"
+      ],
+      [
+        "sensor_sim_stopping_ms_data_out_1",
+        "mqtt_data_in_1"
+      ],
+      [
+        "app_task_exec_out_2",
+        "sensor_sim_stopping_ms_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "logger_exec_in_1"
+      ],
+      [
+        "app_task_exec_out_2",
+        "_i2c_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "timer_node_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "storage_manager_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "wifi_exec_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "event_handler_event_in_0"
+      ],
+      [
+        "app_task_exec_out_2",
+        "mqtt_data_in_1"
+      ]
+    ],
+    "layout": {
+      "orientation": "",
+      "node_width": 0.0,
+      "layer_gap": 0.0,
+      "node_gap": 0.0
+    }
+  },
+  "title": "Wiring Topology"
+}

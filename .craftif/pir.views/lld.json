@@ -1,0 +1,712 @@
+{
+  "schema_version": "1.0.0",
+  "view": "lld",
+  "revision": "0a16acfaf89999948d96d65dc687cb0f",
+  "graph_version": 22,
+  "generated_at_ms": 1786184702456,
+  "graph": {
+    "schema_version": 1,
+    "id": "pir_craftiai_sentinel-lld",
+    "name": "craftiai_sentinel topology — LLD",
+    "description": "Low-level design — FreeRTOS and peripheral/service workflow",
+    "nodes": [
+      {
+        "id": "app_task",
+        "node_type": "rtos_task",
+        "label": "Task app_task",
+        "description": "Executes RTOS loop logic for app_task.",
+        "ports": [
+          {
+            "id": "app_task::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "app_task::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "app_task",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 5.0,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "rtos_task"
+          }
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 5.0
+        },
+        "visual": {
+          "x": -560.0,
+          "y": 0.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "led",
+        "node_type": "rtos_task",
+        "label": "Task led",
+        "description": "Executes RTOS loop logic for led.",
+        "ports": [
+          {
+            "id": "led::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "led",
+          "priority": 5,
+          "stack_size": 2048,
+          "period_ms": 0.0,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "rtos_task"
+          }
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 2048,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": -232.0,
+          "y": 0.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "commission",
+        "node_type": "rtos_task",
+        "label": "Task commission",
+        "description": "Executes RTOS loop logic for commission.",
+        "ports": [
+          {
+            "id": "commission::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "commission::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "commission",
+          "priority": 5,
+          "stack_size": 3072,
+          "period_ms": 0.0,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "rtos_task"
+          }
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 3072,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 96.0,
+          "y": 0.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "sensor_200hz",
+        "node_type": "rtos_task",
+        "label": "Task sensor_200hz",
+        "description": "Executes RTOS loop logic for sensor_200hz.",
+        "ports": [
+          {
+            "id": "sensor_200hz::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "sensor_200hz",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "rtos_task"
+          }
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": 424.0,
+          "y": 0.0,
+          "layer": 0
+        }
+      },
+      {
+        "id": "sensor_200hz_1",
+        "node_type": "rtos_task",
+        "label": "Task sensor_200hz",
+        "description": "Executes RTOS loop logic for sensor_200hz.",
+        "ports": [
+          {
+            "id": "sensor_200hz_1::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_200hz_1::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "task_name": "sensor_200hz",
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "rtos_task"
+          }
+        },
+        "execution": {
+          "priority": 5,
+          "stack_size": 4096,
+          "period_ms": 0.0
+        },
+        "visual": {
+          "x": -560.0,
+          "y": 320.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "event_handler",
+        "node_type": "event_handler",
+        "label": "Event Handler",
+        "description": "Queues and dispatches asynchronous firmware events.",
+        "ports": [
+          {
+            "id": "event_handler::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "event_handler::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "event_base": "ESP_EVENT_ANY_BASE",
+          "event_id": -1,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "event_handler"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": -232.0,
+          "y": 320.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "timer_node",
+        "node_type": "timer_node",
+        "label": "Timer",
+        "description": "Schedules periodic callbacks for time-based workflow.",
+        "ports": [
+          {
+            "id": "timer_node::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "timer_node::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "timer_name": "periodic_timer",
+          "period_ms": 1000.0,
+          "auto_reload": true,
+          "lld_workflow": {
+            "role": "freertos",
+            "node_type": "timer_node"
+          }
+        },
+        "execution": {
+          "period_ms": 1000.0
+        },
+        "visual": {
+          "x": 96.0,
+          "y": 320.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "sensor_sim_stopping_ms",
+        "node_type": "sensor_input",
+        "label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)",
+        "description": "Samples sensor state from GPIO 136.",
+        "ports": [
+          {
+            "id": "sensor_sim_stopping_ms::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "sensor_sim_stopping_ms::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "pin": 136,
+          "lld_workflow": {
+            "role": "peripheral",
+            "node_type": "sensor_input"
+          }
+        },
+        "hardware": {
+          "gpio": 136,
+          "bus": "gpio",
+          "pin_label": "SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)"
+        },
+        "execution": {},
+        "visual": {
+          "x": 424.0,
+          "y": 320.0,
+          "layer": 1
+        }
+      },
+      {
+        "id": "led_gpio",
+        "node_type": "gpio_output",
+        "label": "LED GPIO (GPIO 8, APP_LED_GPIO)",
+        "description": "Drives GPIO 8 as an output signal.",
+        "ports": [
+          {
+            "id": "led_gpio::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "led_gpio::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "pin": 8,
+          "lld_workflow": {
+            "role": "peripheral",
+            "node_type": "gpio_output"
+          }
+        },
+        "hardware": {
+          "gpio": 8,
+          "bus": "gpio",
+          "pin_label": "LED GPIO (GPIO 8, APP_LED_GPIO)"
+        },
+        "execution": {},
+        "visual": {
+          "x": -560.0,
+          "y": 640.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "_i2c",
+        "node_type": "i2c_device",
+        "label": "APP I2C Device",
+        "description": "Represents an I2C peripheral with mapped bus pins.",
+        "ports": [
+          {
+            "id": "_i2c::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "_i2c::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "sda_pin": 4,
+          "scl_pin": 5,
+          "address": "0x68",
+          "clock_hz": 100000,
+          "pin_bindings": {
+            "sda": 4,
+            "scl": 5
+          },
+          "lld_workflow": {
+            "role": "peripheral",
+            "node_type": "i2c_device"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": -232.0,
+          "y": 640.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "storage_manager",
+        "node_type": "storage_manager",
+        "label": "Storage Manager",
+        "description": "Persists runtime state and configuration data.",
+        "ports": [
+          {
+            "id": "storage_manager::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "storage_manager::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "backend": "nvs",
+          "namespace": "app",
+          "lld_workflow": {
+            "role": "service",
+            "node_type": "storage_manager"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": 96.0,
+          "y": 640.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "wifi",
+        "node_type": "wifi_manager",
+        "label": "WiFi",
+        "description": "Manages Wi-Fi connectivity and network state.",
+        "ports": [
+          {
+            "id": "wifi::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "wifi::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "mode": "station",
+          "lld_workflow": {
+            "role": "service",
+            "node_type": "wifi_manager"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": 424.0,
+          "y": 640.0,
+          "layer": 2
+        }
+      },
+      {
+        "id": "mqtt",
+        "node_type": "mqtt_client",
+        "label": "MQTT",
+        "description": "Publishes and receives MQTT messages on `esp32/sensor`.",
+        "ports": [
+          {
+            "id": "mqtt::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "mqtt::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "broker_url": "/api/command",
+          "topic": "esp32/sensor",
+          "qos": 0,
+          "lld_workflow": {
+            "role": "service",
+            "node_type": "mqtt_client"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": -280.0,
+          "y": 960.0,
+          "layer": 3
+        }
+      },
+      {
+        "id": "logger",
+        "node_type": "logger",
+        "label": "Logger",
+        "description": "Emits structured runtime logs for diagnostics.",
+        "ports": [
+          {
+            "id": "logger::ldd::in",
+            "name": "assoc_in",
+            "direction": "input",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          },
+          {
+            "id": "logger::ldd::out",
+            "name": "assoc_out",
+            "direction": "output",
+            "datatype": "association",
+            "required": false,
+            "multiplicity": "one"
+          }
+        ],
+        "properties": {
+          "tag": "APP",
+          "level": "info",
+          "lld_workflow": {
+            "role": "service",
+            "node_type": "logger"
+          }
+        },
+        "execution": {},
+        "visual": {
+          "x": 48.0,
+          "y": 960.0,
+          "layer": 3
+        }
+      }
+    ],
+    "connections": [
+      [
+        "app_task::ldd::out",
+        "led_gpio::ldd::in"
+      ],
+      [
+        "timer_node::ldd::out",
+        "app_task::ldd::in"
+      ],
+      [
+        "timer_node::ldd::out",
+        "led::ldd::in"
+      ],
+      [
+        "timer_node::ldd::out",
+        "sensor_200hz::ldd::in"
+      ],
+      [
+        "timer_node::ldd::out",
+        "sensor_200hz_1::ldd::in"
+      ],
+      [
+        "timer_node::ldd::out",
+        "commission::ldd::in"
+      ],
+      [
+        "sensor_sim_stopping_ms::ldd::out",
+        "logger::ldd::in"
+      ],
+      [
+        "sensor_sim_stopping_ms::ldd::out",
+        "_i2c::ldd::in"
+      ],
+      [
+        "sensor_sim_stopping_ms::ldd::out",
+        "storage_manager::ldd::in"
+      ],
+      [
+        "sensor_sim_stopping_ms::ldd::out",
+        "event_handler::ldd::in"
+      ],
+      [
+        "wifi::ldd::out",
+        "mqtt::ldd::in"
+      ],
+      [
+        "sensor_sim_stopping_ms::ldd::out",
+        "mqtt::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "sensor_sim_stopping_ms::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "logger::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "_i2c::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "timer_node::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "storage_manager::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "wifi::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "event_handler::ldd::in"
+      ],
+      [
+        "app_task::ldd::out",
+        "mqtt::ldd::in"
+      ]
+    ],
+    "layout": {
+      "orientation": "vertical",
+      "node_width": 280.0,
+      "layer_gap": 120.0,
+      "node_gap": 48.0
+    },
+    "runtime_metadata": {
+      "telemetry_enabled": false,
+      "overlays": {
+        "diagram_view": "ldd",
+        "ldd_edge_labels": {
+          "app_task::ldd::out|timer_node::ldd::in": "controls",
+          "app_task::ldd::out|led_gpio::ldd::in": "controls",
+          "timer_node::ldd::out|led::ldd::in": "triggers",
+          "timer_node::ldd::out|sensor_200hz::ldd::in": "triggers",
+          "sensor_sim_stopping_ms::ldd::out|mqtt::ldd::in": "data_flow",
+          "app_task::ldd::out|storage_manager::ldd::in": "controls",
+          "app_task::ldd::out|logger::ldd::in": "controls",
+          "app_task::ldd::out|sensor_sim_stopping_ms::ldd::in": "controls",
+          "app_task::ldd::out|event_handler::ldd::in": "controls",
+          "timer_node::ldd::out|app_task::ldd::in": "triggers",
+          "sensor_sim_stopping_ms::ldd::out|logger::ldd::in": "data_flow",
+          "sensor_sim_stopping_ms::ldd::out|event_handler::ldd::in": "signals",
+          "app_task::ldd::out|wifi::ldd::in": "controls",
+          "wifi::ldd::out|mqtt::ldd::in": "connects",
+          "sensor_sim_stopping_ms::ldd::out|storage_manager::ldd::in": "data_flow",
+          "timer_node::ldd::out|commission::ldd::in": "triggers",
+          "timer_node::ldd::out|sensor_200hz_1::ldd::in": "triggers",
+          "app_task::ldd::out|mqtt::ldd::in": "controls",
+          "sensor_sim_stopping_ms::ldd::out|_i2c::ldd::in": "data_flow",
+          "app_task::ldd::out|_i2c::ldd::in": "controls"
+        }
+      }
+    }
+  },
+  "mermaid": "flowchart TD\n  subgraph freertos_runtime[\"FreeRTOS\"]\n    app_task[\"Task app_task\"]\n    commission[\"Task commission\"]\n    led[\"Task led\"]\n    sensor_200hz[\"Task sensor_200hz\"]\n    sensor_200hz_1[\"Task sensor_200hz\"]\n    event_handler[\"Event Handler\"]\n    timer_node[\"Timer\"]\n  end\n  sensor_sim_stopping_ms[\"SENSOR SIM STOPPING MS (GPIO 136, APP_SENSOR_SIM_STOPPING_MS)\"]\n  led_gpio[\"LED GPIO (GPIO 8, APP_LED_GPIO)\"]\n  _i2c[\"APP I2C Device\"]\n  storage_manager[\"Storage Manager\"]\n  wifi[\"WiFi\"]\n  mqtt[\"MQTT\"]\n  logger[\"Logger\"]\n  app_task --> _i2c\n  app_task --> event_handler\n  app_task --> led_gpio\n  app_task --> logger\n  app_task --> mqtt\n  app_task --> sensor_sim_stopping_ms\n  app_task --> storage_manager\n  app_task --> timer_node\n  app_task --> wifi\n  sensor_sim_stopping_ms --> _i2c\n  sensor_sim_stopping_ms --> event_handler\n  sensor_sim_stopping_ms --> logger\n  sensor_sim_stopping_ms --> mqtt\n  sensor_sim_stopping_ms --> storage_manager\n  timer_node --> app_task\n  timer_node --> commission\n  timer_node --> led\n  timer_node --> sensor_200hz_1\n  timer_node --> sensor_200hz\n  wifi --> mqtt",
+  "title": "Low-Level Design (Firmware Workflow)"
+}

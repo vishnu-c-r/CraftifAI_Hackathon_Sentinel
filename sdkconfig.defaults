@@ -1,0 +1,9 @@
+# Auto-generated defaults for the standard project layout.
+CONFIG_IDF_TARGET="esp32c3"
+# Harvested from reference example (H1) — feature flags only, no design choices.
+CONFIG_BLINK_LED_GPIO=y
+CONFIG_BLINK_GPIO=8
+# --- firmgen_telemetry (auto) ---
+CONFIG_FREERTOS_USE_TRACE_FACILITY=y
+CONFIG_FREERTOS_GENERATE_RUN_TIME_STATS=y
+CONFIG_FREERTOS_RUN_TIME_STATS_USING_ESP_TIMER=y
