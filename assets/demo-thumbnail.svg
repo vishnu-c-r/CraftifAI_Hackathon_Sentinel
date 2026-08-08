@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-label="CraftiAI Sentinel demo video">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="520" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1278" height="518" rx="17" fill="none" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- subtle waveform motif -->
+  <g stroke="#1e293b" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M60 430 L120 430 L150 380 L190 470 L230 350 L270 460 L310 400 L360 430 L1220 430"/>
+  </g>
+
+  <text x="80" y="150" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="58" font-weight="700" fill="#e5e7eb">CraftiAI&#160;Sentinel</text>
+  <text x="82" y="200" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="400" fill="#94a3b8">ESP32-C3 vibration &amp; anomaly monitoring &#8212; live hardware demo</text>
+
+  <!-- duration badge -->
+  <g transform="translate(80,240)">
+    <rect width="150" height="40" rx="20" fill="#0b1220" stroke="#334155" stroke-width="1.5"/>
+    <circle cx="26" cy="20" r="6" fill="#22c55e"/>
+    <text x="46" y="27" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#cbd5e1">1&#8211;2 min</text>
+  </g>
+
+  <!-- play button -->
+  <g transform="translate(640,300)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="66" fill="url(#accent)"/>
+    <circle cx="0" cy="0" r="66" fill="none" stroke="#e5f9ee" stroke-width="2" opacity="0.4"/>
+    <path d="M-20 -30 L34 0 L-20 30 Z" fill="#062018"/>
+  </g>
+  <text x="640" y="430" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="600" fill="#e2e8f0">&#9654;&#160;&#160;Watch the demo</text>
+  <text x="640" y="462" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="15" fill="#64748b">working.mp4 &#183; FirmGen home screen &#8594; firmware running on hardware</text>
+</svg>
