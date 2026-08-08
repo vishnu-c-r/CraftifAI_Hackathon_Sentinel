@@ -18,8 +18,6 @@ https://github.com/user-attachments/assets/1f5e6718-70c0-4548-a013-5f2ff2865b29
 
 **Demo (1–2 min):** the clip opens on the **FirmGen home screen**, then focuses on the firmware running on the physical ESP32-C3 + HW-290 rig — the live dashboard updating over Wi-Fi, the machine-phase transitions, and the onboard LED changing color with machine state. *(Source file: [`working.mp4`](working.mp4).)*
 
-> GitHub does not embed repository-hosted `.mp4` files inline, so the thumbnail above links to the video file. Click it (or open `working.mp4`) to watch. To get an auto-playing inline preview, drag-and-drop the same file into this README on github.com and GitHub will host and embed it.
-
 ---
 
 ## Table of contents
